@@ -7,18 +7,86 @@ body {
 }
 
 .app-title {
-    font-size: 10;
+    font-size: 2em;
+    margin: 8px;
     font-weight: 700;
 }
 
 .app-bar, .brand-bar {
     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-card img {
+    border-radius: 1rem;
+    display: block;
+    max-width: 240px;
+    height: auto;
+}
+
+.hero img { 
+    height: 550px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.explore-foods {
+    display: grid;
+    padding: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+}
+
+.food-card {
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin: 4px;
+    padding: 10px 8px;
+}
+
+.top-banner h2 {
+    text-align: center;
+}
+
+#banner-title {
+    text-transform: uppercase;
 }
 
 .app-bar {
-    flex-basis: 100px;
+    padding: 8px;
+}
+
+.app-brand {
+    object-fit: contain;
+}
+
+.navigation {
+    flex-grow: 1;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 4px;
+}
+
+.navigation a {
+    color: #000;
+    text-decoration: none;
+    margin: 4px;
+    font-size: 1.2em;
 }
 
 img {
     display: block;
+}
+
+.food-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.food-description {
+    font-size: 16px;
+    font-weight: 500;   
 }
