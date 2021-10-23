@@ -1,0 +1,5 @@
+# Custom Settings
+.vscode/
+
+# Packages
+node_modules/
