@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Roboto&display=swap");
+
+body {
+    font-family: 'Roboto', 'Inter';
+    margin: 0;
+    padding: 0;
+}
+
+.app-title {
+    font-size: 10;
+    font-weight: 700;
+}
+
+.app-bar, .brand-bar {
+    display: flex;
+}
+
+.app-bar {
+    flex-basis: 100px;
+}
+
+img {
+    display: block;
+}
