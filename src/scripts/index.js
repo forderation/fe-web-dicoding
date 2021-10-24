@@ -20,5 +20,21 @@ customElements.define('list-restaurant', Restaturants);
 const contentElement = $('#contents')[0];
 contentElement.restaurants = restaurantsData;
 
+/**
+ * Event listener drawer
+ */
+const drawerElement = $('#drawer');
+$('main').on('click', function (event) {
+  drawerElement.toggleClass('open');
+  event.stopPropagation();
+});
+$('#hamburger').on('click', function (event) {
+  drawerElement.toggleClass('open');
+  event.stopPropagation();
+});
+
+/**
+ * Add Font Awesome
+ */
 library.add(fas);
 dom.i2svg();

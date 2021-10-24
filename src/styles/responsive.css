@@ -22,6 +22,12 @@
     }
 }
 
+@media screen and (min-width: 551px) {
+    #drawer {
+        display: none !important;
+    }
+}
+
 @media screen and (max-width: 550px) {
     .explore-foods {
         grid-template-columns: 1fr;

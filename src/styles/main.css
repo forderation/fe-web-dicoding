@@ -22,7 +22,7 @@ body {
 }
 
 .brand-bar {
-    padding: 2px;
+    padding: 4px;
 }
 
 .image-card img {
@@ -129,10 +129,6 @@ body {
     text-align: center;
 }
 
-.app-bar {
-    padding: 8px;
-}
-
 .app-brand {
     object-fit: contain;
     height: 60px;
@@ -152,16 +148,21 @@ body {
 }
 
 .navigation-mobile {
+    top: 60px;
     padding: 8px;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+    background: white;
 }
 
 .navigation-mobile ul a {
     color: #F54748;
     font-weight: 500;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .navigation-mobile li {
@@ -170,13 +171,12 @@ body {
 
 #hamburger {
     display: none;
+    margin-right: 10px;
 }
 
 #drawer {
     display: none;
-    position: absolute;
     transform: translate(0, -250px);
-    transition: transform 0.3s ease-in-out;
 }
 
 #drawer.open {
