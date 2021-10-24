@@ -217,7 +217,15 @@ img {
 }
 
 footer {
+    margin-top: 4px;
+    padding: 2px;
+    background-color: #F54748;
     text-align: center;
+    color: white;
+}
+
+footer a {
+    color: white;
 }
 
 .detail-link {
