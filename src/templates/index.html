@@ -1,66 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="./images/fudo.ico" />
     <title>Restaurant Apps Starter Project</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="app-bar">
-            <div class="brand-bar">
-                <img class="app-brand" src="./images/icon.png" alt="">
-                <h1 class="app-title"> Fudo </h1> 
-            </div>
-            <nav class="navigation">
-                <a href="#">Home</a>
-                <a href="#">Favourite</a>
-                <a href="#">About Us</a>
-            </nav>
+      <div id="skip">
+        <a href="#contents">Skip to main content</a>
+      </div>
+      <div class="app-bar">
+        <div class="brand-bar">
+          <img class="app-brand" src="./images/icon.png" alt="" />
+          <h1 class="app-title">Fudo</h1>
         </div>
+        <nav class="navigation">
+          <a href="#">Home</a>
+          <a href="#">Favourite</a>
+          <a href="https://www.linkedin.com/in/kharismamuzaki/" target="_blank"
+            >About Us</a
+          >
+        </nav>
+      </div>
     </header>
     <div class="hero">
-        <img src="./images/heros/hero-image_2.jpg" alt="">    
+      <img src="./images/heros/hero-image_2.jpg" alt="" />
     </div>
     <div id="explore">
-        <div class="top-banner">
-            <h2 id="banner-title">
-                What we serve
-            </h2>
-            <h2 id="banner-desc">
-                Your Favorite Food Delivery Partner
-            </h2>
+      <div class="top-banner">
+        <h2 id="banner-title">What we serve</h2>
+        <div class="services">
+          <section class="service">
+            <img src="./images/img1.png" alt="Service" />
+            <figcaption>Easy To Order</figcaption>
+          </section>
+          <section class="service">
+            <img src="./images/img2.png" alt="Service" />
+            <figcaption>Fastest Delivery</figcaption>
+          </section>
+          <section class="service">
+            <img src="./images/img3.png" alt="Service" />
+            <figcaption>Best Quality</figcaption>
+          </section>
         </div>
-        <div class="explore-foods">
-            <div class="food-card">
-                <section class="food-header">
-                    <div class="image-card">
-                        <h2>Kota Bandung</h2>
-                        <img src="https://dicoding-restaurant-api.el.r.appspot.com/images/medium/41" alt="Food Image">
-                    </div>                
-                </section>
-                <section class="food-body">
-                    <p>Rating: </p>
-                    <h2 class="food-title">Judul Makanan</h2>
-                    <h3 class="food-description">Deskripsi Makanan</h3>
-                </section>
-            </div>
-            <div class="food-card">
-                <section class="food-header">
-                    <div class="image-card">
-                        <h2>Kota Bandung</h2>
-                        <img src="https://dicoding-restaurant-api.el.r.appspot.com/images/medium/41" alt="Food Image">
-                    </div>                
-                </section>
-                <section class="food-body">
-                    <p>Rating: </p>
-                    <h2 class="food-title">Judul Makanan</h2>
-                    <h3 class="food-description">Deskripsi Makanan</h3>
-                </section>
-            </div>
-        </div>
+        <h2 id="banner-desc">Explore Your Foods</h2>
+      </div>
+      <list-restaurant id="contents" class="explore-foods"></list-restaurant>
     </div>
     <footer>
-        <p>Copyright &copy; 2021 - Fudo powered by Hunger Apps</p>
+      <p>Copyright &copy; 2021 - Fudo powered by Hunger Apps</p>
     </footer>
-</body>
+  </body>
 </html>

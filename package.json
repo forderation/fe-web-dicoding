@@ -14,10 +14,20 @@
   "devDependencies": {
     "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/free-regular-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "babel-loader": "^8.1.0",
     "copy-webpack-plugin": "^6.0.3",
     "css-loader": "^3.6.0",
-    "eslint": "^7.4.0",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.1",
+    "eslint-webpack-plugin": "^3.0.1",
     "html-webpack-plugin": "^4.3.0",
     "jasmine-ajax": "^4.0.0",
     "jasmine-core": "^3.5.0",
@@ -35,6 +45,7 @@
     "whatwg-fetch": "^3.2.0"
   },
   "dependencies": {
+    "jquery": "^3.6.0",
     "regenerator-runtime": "^0.13.5"
   }
 }
