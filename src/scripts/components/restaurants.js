@@ -17,9 +17,11 @@ export default class Restaturans extends HTMLElement {
   }
 
   render () {
-    for (const restaurant of this._restaurants) {
-      this.elemenBuilder(restaurant);
-    }
+    try {
+      this._restaurants.forEach((res) => {
+        this.elemenBuilder(res);
+      });
+    } catch (_) {}
   }
 
   elemenBuilder (item) {

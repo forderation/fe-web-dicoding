@@ -9,7 +9,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import Restaturants from './components/restaurants.js';
 import RestaturantItem from './components/restaurant-item.js';
 
-import { restaurantsData } from './DATA.json';
+import restaurantsData from './DATA';
 
 /**
  * Define custom element
