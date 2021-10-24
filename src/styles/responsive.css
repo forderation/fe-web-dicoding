@@ -34,6 +34,7 @@
     }
     #hamburger {
         display: block;
+        font-size: 18px;
     }
     #main-nav {
         display: none;

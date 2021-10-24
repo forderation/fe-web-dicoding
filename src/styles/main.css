@@ -77,10 +77,6 @@ body {
     color: #F7B700;
 }
 
-.fa-bars {
-    color:#F54748;
-}
-
 .explore-foods {
     display: grid;
     padding: 10px;
@@ -97,7 +93,7 @@ body {
     height: 460px;
 }
 
-.top-banner h2 {
+.top-banner h1 {
     text-align: center;
 }
 
@@ -159,13 +155,16 @@ body {
     background: white;
 }
 
-.navigation-mobile ul a {
+.navigation-mobile ul li a {
     color: #F54748;
     font-weight: 500;
     text-decoration: none;
     font-size: 18px;
+    margin: 4px;
+    display: block;
     min-width: 44px;
     min-height: 44px;
+    line-height: 44px;
 }
 
 .navigation-mobile li {
@@ -175,6 +174,10 @@ body {
 #hamburger {
     display: none;
     margin-right: 10px;
+    min-width: 44px;
+    min-height: 44px;
+    text-align: center;
+    line-height: 44px;
 }
 
 #drawer {
@@ -231,5 +234,13 @@ footer a {
 .detail-link {
     color: #F54748;
     min-width: 44px;
+    min-height: 44px;
+}
+
+.detail-link {
+    display: block;
+    color: #F54748;
+    min-width: 44px;
+    line-height: 44px;
     min-height: 44px;
 }

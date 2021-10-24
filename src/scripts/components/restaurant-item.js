@@ -24,7 +24,7 @@ export default class RestaturantItem extends HTMLElement {
               </section>
               <section class="food-body">
                 <i class="fas fa-star"></i> ${this._restaturant.rating}
-                <h2 class="food-title">${this._restaturant.name}</h2>
+                <h1 class="food-title">${this._restaturant.name}</h1>
                 <p class="food-description">${this._restaturant.description}</p>
                 <a class="detail-link" href="${this._restaturant.pictureId}" target="_blank">Detail About ${this._restaturant.name}</a>
               </section>
