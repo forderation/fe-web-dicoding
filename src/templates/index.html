@@ -3,25 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="./images/fudo.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Restaurant Apps Starter Project</title>
   </head>
   <body>
+    <div>
+      <a id="skip-link" href="#contents">Skip to main content</a>
+    </div>
     <header>
-      <div id="skip">
-        <a href="#contents">Skip to main content</a>
-      </div>
       <div class="app-bar">
         <div class="brand-bar">
           <img class="app-brand" src="./images/icon.png" alt="" />
           <h1 class="app-title">Fudo</h1>
         </div>
-        <nav class="navigation">
+        <nav id="main-nav" class="navigation">
           <a href="#">Home</a>
           <a href="#">Favourite</a>
           <a href="https://www.linkedin.com/in/kharismamuzaki/" target="_blank"
             >About Us</a
           >
         </nav>
+        <nav id="drawer" class="navigation-mobile">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Favourite</a></li>
+            <li><a href="https://www.linkedin.com/in/kharismamuzaki/" target="_blank">About Us</a></li>
+          </ul>
+        </nav>     
+        <a id="hamburger" href="#"><i class="fas fa-bars"></i></a>
       </div>
     </header>
     <div class="hero">
@@ -32,15 +42,15 @@
         <h2 id="banner-title">What we serve</h2>
         <div class="services">
           <section class="service">
-            <img src="./images/img1.png" alt="Service" />
+            <img src="./images/img1.png" alt="Easy To Order" />
             <figcaption>Easy To Order</figcaption>
           </section>
           <section class="service">
-            <img src="./images/img2.png" alt="Service" />
+            <img src="./images/img2.png" alt="Fastest Delivery" />
             <figcaption>Fastest Delivery</figcaption>
           </section>
           <section class="service">
-            <img src="./images/img3.png" alt="Service" />
+            <img src="./images/img3.png" alt="Best Quality" />
             <figcaption>Best Quality</figcaption>
           </section>
         </div>

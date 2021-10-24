@@ -1,9 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&family=Roboto&display=swap");
-
 body {
-    font-family: 'Inter', 'Roboto';
+    font-family: 'Inter', 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 .app-title {
@@ -47,25 +50,40 @@ body {
     text-transform: uppercase;
 }
 
-.hero img { 
+.hero img {
     height: 550px;
     width: 100%;
     object-fit: cover;
 }
 
-#skip {
+#skip-link {
     margin: 4px 10px 2px;
+    position: absolute;
+    top: -40px;
+    left: 0;
+    color: #F54748;
+    ;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 8px;
+    z-index: 100;
+}
+
+#skip-link:focus {
+    top: 0;
 }
 
 .fa-star {
     color: #F7B700;
 }
 
+.fa-bars {
+    color:#F54748;
+}
+
 .explore-foods {
     display: grid;
     padding: 10px;
     grid-template-columns: repeat(4, 1fr);
-    /* grid-column-gap: 10px; */
     grid-gap: 10px;
 }
 
@@ -75,7 +93,7 @@ body {
     border-radius: 5px;
     margin: 4px;
     padding: 10px 8px;
-    height: 420px;
+    height: 460px;
 }
 
 .top-banner h2 {
@@ -99,7 +117,7 @@ body {
 }
 
 .service img {
-    width: 260px;
+    min-width: 260px;
     height: 200px;
     object-fit: contain;
     margin: auto;
@@ -128,6 +146,44 @@ body {
     padding: 4px;
 }
 
+.navigation-mobile ul {
+    list-style-type: none;
+    padding-inline-start: 0;
+}
+
+.navigation-mobile {
+    padding: 8px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.navigation-mobile ul a {
+    color: #F54748;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navigation-mobile li {
+    margin: 10px;
+}
+
+#hamburger {
+    display: none;
+}
+
+#drawer {
+    display: none;
+    position: absolute;
+    transform: translate(0, -250px);
+    transition: transform 0.3s ease-in-out;
+}
+
+#drawer.open {
+    display: block;
+    transform: translate(0, 0);
+}
+
 .navigation a {
     background-color: #F54748;
     padding: 10px;
@@ -149,7 +205,7 @@ img {
 
 .food-description {
     font-size: 16px;
-    font-weight: 500;   
+    font-weight: 500;
     max-height: 100px;
     text-overflow: ellipsis;
     overflow: hidden;

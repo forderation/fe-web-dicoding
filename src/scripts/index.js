@@ -1,5 +1,7 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
+import '../styles/responsive.css';
+
 import $ from 'jquery';
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
