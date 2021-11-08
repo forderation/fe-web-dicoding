@@ -8,7 +8,7 @@ const CONFIG = {
   CACHE_NAME: 'FoodRestaturant-Fudo-V1',
   DATABASE_NAME: 'food-restaurant-fudo',
   DATABASE_VERSION: 1,
-  OBJECT_STORE_NAME: 'foods'
+  OBJECT_STORE_NAME: 'restaurants'
 };
 
 export default CONFIG;
