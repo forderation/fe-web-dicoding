@@ -1,4 +1,4 @@
-import IMAGE_API from '../../utils/image-api';
+import API_ENDPOINT from '../../globals/api-endpoint';
 
 /**
  * Create template for restaurant card item
@@ -11,7 +11,7 @@ const createResturantItemTemplate = (restaturant) => {
         <section class="food-header">
             <div class="image-card">
                 <img
-                src="${IMAGE_API.getImageUrl(restaturant.pictureId)}"
+                src="${API_ENDPOINT.IMAGE(restaturant.pictureId)}"
                 alt="${restaturant.name}"
                 />
                 <div class="label-city">

@@ -11,6 +11,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 
 // import restaurantsData from './DATA';
 import App from './views/app';
+import swRegister from './worker/register-service';
 
 /**
  * Define custom element
@@ -30,6 +31,7 @@ $(window).on('hashchange', function () {
 
 $(window).on('load', function () {
   app.renderPage();
+  swRegister();
 });
 
 // const contentElement = $('#contents')[0];
