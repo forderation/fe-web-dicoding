@@ -123,6 +123,9 @@ body {
 .service figcaption {
     font-size: 1.4em;
     font-weight: 600;
+}
+
+.service > * {
     text-align: center;
 }
 
@@ -229,6 +232,8 @@ footer {
 
 footer a {
     color: white;
+    font-size: 16px;
+    padding: 16px 0 16px 0;
 }
 
 .detail-link {
