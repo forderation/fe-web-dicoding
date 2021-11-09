@@ -11,6 +11,9 @@
     .explore-foods {
         grid-template-columns: repeat(3, 1fr);
     }
+    .tag-menu {
+        grid-template-columns: repeat(6, 1fr);
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -20,17 +23,36 @@
     .services {
         grid-template-columns: 1fr;
     }
+    .tag-menu {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
-@media screen and (min-width: 551px) {
+@media screen and (min-width: 551px) and (max-width: 799px) {
     #drawer {
         display: none !important;
+    }
+
+    .heading-detail {
+        flex-direction: column;
+    }
+
+    .head > .title {
+        font-size: 24px;
+    }
+
+    .place {
+        margin-top: 0px;
+        font-size: 16px;
     }
 }
 
 @media screen and (max-width: 550px) {
     .explore-foods {
         grid-template-columns: 1fr;
+    }
+    .tag-menu {
+        grid-template-columns: repeat(2, 1fr);
     }
     #hamburger {
         display: block;
@@ -41,5 +63,18 @@
     }
     .app-bar {
         justify-content: space-between;
+    }
+
+    .heading-detail {
+        flex-direction: column;
+    }
+
+    .head > .title {
+        font-size: 24px;
+    }
+    
+    .place {
+        margin-top: 0px;
+        font-size: 16px;
     }
 }

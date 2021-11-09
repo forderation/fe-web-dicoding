@@ -20,12 +20,19 @@ const createResturantItemTemplate = (restaturant) => {
             </div>
             </section>
             <section class="food-body">
-            <i class="fas fa-star"></i> ${restaturant.rating}
+            <i class="fas fa-star fa-lg"></i> ${restaturant.rating}
             <h1 class="food-title">${restaturant.name}</h1>
             <p class="food-description">${restaturant.description}</p>
             <a class="detail-link" href="${API_ENDPOINT.DETAIL_ROUTE(restaturant.id)}">Detail About ${restaturant.name}</a>
         </section>
     </div>`;
+};
+
+const parseTagItem = (categories) => {
+  const divMapping = categories.map((category) => {
+    return /* html */ `<div>${category.name}</div>`;
+  });
+  return divMapping.join(' ');
 };
 
 /**
@@ -35,20 +42,40 @@ const createResturantItemTemplate = (restaturant) => {
  */
 const createRestaurantDetailTemplate = (restaturant) => {
   return /* html */`
-    <h2 class="movie__title">${restaturant.name}</h2>
-      <img class="movie__poster" src="${API_ENDPOINT.IMAGE(restaturant.pictureId)}" alt="${restaturant.name}" />
-    <div class="movie__info">
-    <h3>Information</h3>
-      <h4>City</h4>
-      <p>${restaturant.city}</p>
-      <h4>Address</h4>
-      <p>${restaturant.address}</p>
-      <h4>Rating</h4>
-      <p>${restaturant.rating} minutes</p>
+    <img class="image-detail" src="${API_ENDPOINT.IMAGE(restaturant.pictureId)}" alt="${restaturant.name}" />
+    <div class="heading-detail">
+      <div class="head">
+        <p class="title">${restaturant.name}</p>
+        <div class="rating">
+          <i class="fas fa-star"></i> <p>${restaturant.rating}</p>
+        </div>
+      </div>
+      <div class="place">
+        <i class="fas fa-map-marker-alt fa-2x"></i> ${restaturant.city}
+        <p class="address">${restaturant.address}</p>
+      </div>
     </div>
-    <div class="movie__overview">
-      <h3>Description</h3>
+    <div class="tag-menu">
+      ${parseTagItem(restaturant.categories)}
+    </div>
+    <div class="description-resturant">
       <p>${restaturant.description}</p>
+    </div>
+    <div class="menus-restaurant">
+      <div class="heading">
+        <i class="fas fa-utensils fa-2x"></i> <p class="title">Foods</p>
+      </div>
+      <div class="tag-menu">
+        ${parseTagItem(restaturant.menus.foods)}
+      </div>
+    </div>
+    <div class="menus-restaurant">
+      <div class="heading">
+        <i class="fas fa-wine-glass-alt fa-2x"></i> <p class="title">Drinks</p>
+      </div>
+      <div class="tag-menu">
+        ${parseTagItem(restaturant.menus.drinks)}
+      </div>
     </div>
   `;
 };

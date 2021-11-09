@@ -77,6 +77,18 @@ body {
     color: #F7B700;
 }
 
+.fa-map-marker-alt {
+    color: #F54748;
+}
+
+.fa-utensils {
+    color: #F7B700;
+}
+
+.fa-wine-glass-alt {
+    color: #F7B700;
+}
+
 .explore-foods {
     display: grid;
     padding: 10px;
@@ -96,10 +108,68 @@ body {
     text-align: center;
 }
 
+.image-detail {
+    max-height: 500px;
+    width: 100%;
+    object-fit: cover;    
+}
+
+.heading-detail {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.rating {
+    margin: 10px;
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+}
+
+.tag-menu {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+}
+
+.tag-menu div {
+    padding: 10px;
+    margin: 0 14px 12px 0;
+    background-color: rgba(245, 71, 72, .8);
+    color: white;
+    border-radius: 10px;
+}
+
+.place {
+    margin-top: 12px;
+    font-size: 18px;
+}
+
+.heading-detail > .head {
+    display: flex;
+    align-content: center;
+}
+
+.head > .title {
+    font-size: 30px;
+    font-weight: 700;
+}
+
 #banner-title {
     text-transform: uppercase;
     color: #F54748;
     font-size: 1.4em;
+}
+
+.menus-restaurant > .heading {
+    display: flex;
+    align-items: center;
+}
+
+.menus-restaurant > .heading > .title {
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 #banner-desc {
@@ -192,6 +262,11 @@ body {
     transform: translate(0, 0);
 }
 
+.app-bar a {
+    text-decoration: none;
+    color: black;
+}
+
 .navigation a {
     background-color: #F54748;
     padding: 10px;
@@ -237,6 +312,7 @@ footer a {
 
 .detail-page {
     margin: 16px;
+    padding-bottom: 30px;
 }
 
 .detail-link {

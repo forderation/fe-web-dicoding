@@ -4,13 +4,18 @@ const DrawerInitiator = {
       this._toggleDrawer(event, drawer);
     });
     content.on('click', (event) => {
-      this._toggleDrawer(event, drawer);
+      this._closeDrawer(event, drawer);
     });
   },
 
   _toggleDrawer (event, drawer) {
     event.stopPropagation();
     drawer.toggleClass('open');
+  },
+
+  _closeDrawer (event, drawer) {
+    event.stopPropagation();
+    drawer.removeClass('open');
   }
 };
 

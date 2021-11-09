@@ -3,8 +3,11 @@ import '../styles/main.css';
 import '../styles/responsive.css';
 
 import $ from 'jquery';
-import { library, dom } from '@fortawesome/fontawesome-svg-core';
-import { fas } from '@fortawesome/free-solid-svg-icons';
+
+import '@fortawesome/fontawesome-free/js/fontawesome';
+import '@fortawesome/fontawesome-free/js/solid';
+import '@fortawesome/fontawesome-free/js/regular';
+import '@fortawesome/fontawesome-free/js/brands';
 
 // import Restaturants from './components/restaurants.js';
 // import RestaturantItem from './components/restaurant-item.js';
@@ -53,5 +56,5 @@ $(window).on('load', function () {
 /**
  * Add Font Awesome
  */
-library.add(fas);
-dom.i2svg();
+// library.add(fas);
+// dom.i2svg();
