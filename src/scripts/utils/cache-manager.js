@@ -23,7 +23,7 @@ const CacheManager = {
   },
 
   async _openCache () {
-    return caches.open(CONFIG.CACHE_NAME);
+    return await caches.open(CONFIG.CACHE_NAME);
   },
 
   async _addCache (request) {

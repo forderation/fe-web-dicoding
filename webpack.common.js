@@ -30,7 +30,7 @@ module.exports = {
       filename: 'index.html'
     }),
     new ServiceWorkerWebpackPlugin({
-      entry: path.resolve(__dirname, 'src/scripts/service-worker.js')
+      entry: path.resolve(__dirname, 'src/scripts/worker/service-worker.js')
     }),
     new CopyWebpackPlugin({
       patterns: [

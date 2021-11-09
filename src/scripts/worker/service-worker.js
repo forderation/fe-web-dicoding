@@ -1,15 +1,14 @@
 import CacheManager from '../utils/cache-manager';
-import $ from 'jquery';
 const { assets } = global.serviceWorkerOption;
 
-$(self).on('install', function (event) {
+self.addEventListener('install', function (event) {
   event.waitUntil(CacheManager.cachingAppShell([...assets, './']));
 });
 
-$(self).on('activate', function (event) {
+self.addEventListener('activate', function (event) {
   event.waitUntil(CacheManager.deleteOldCache());
 });
 
-$(self).on('fetch', function (event) {
+self.addEventListener('fetch', function (event) {
   event.respondWith(CacheManager.revalidateCache(event.request));
 });
