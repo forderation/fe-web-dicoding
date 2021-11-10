@@ -1,5 +1,5 @@
-import Repositories from '../../globals/repositories';
 import $ from 'jquery';
+import Repositories from '../../globals/repositories';
 import { createResturantItemTemplate } from '../templates/template-creator';
 
 const Home = {

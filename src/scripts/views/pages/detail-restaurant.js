@@ -15,6 +15,10 @@ const DetailRestaurant = {
   async afterRender () {
     const url = UrlParser.parseActiveWithoutCombiner();
     const response = await Repositories.getDetailRestaturant(url.id);
+    if (response.error) {
+      window.location.hash = '#/not-found';
+      return;
+    }
     const restaurant = response.restaurant;
     const restaturantContainer = $('#detail-content');
     restaturantContainer.html(createRestaurantDetailTemplate(restaurant));
