@@ -43,44 +43,64 @@ const parseTagItem = (categories) => {
 const createRestaurantDetailTemplate = (restaturant) => {
   return /* html */`
     <img class="image-detail" src="${API_ENDPOINT.IMAGE(restaturant.pictureId)}" alt="${restaturant.name}" />
-    <div class="heading-detail">
-      <div class="head">
-        <p class="title">${restaturant.name}</p>
-        <div class="rating">
-          <i class="fas fa-star"></i> <p>${restaturant.rating}</p>
+    <div class="detail-page">
+      <div class="heading-detail">
+        <div class="head">
+          <p class="title">${restaturant.name}</p>
+          <div class="rating">
+            <i class="fas fa-star"></i> <p>${restaturant.rating}</p>
+          </div>
+        </div>
+        <div class="place">
+          <i class="fas fa-map-marker-alt fa-2x"></i> ${restaturant.city}
+          <p class="address">${restaturant.address}</p>
         </div>
       </div>
-      <div class="place">
-        <i class="fas fa-map-marker-alt fa-2x"></i> ${restaturant.city}
-        <p class="address">${restaturant.address}</p>
+      <div class="tag-menu category-menu">
+        ${parseTagItem(restaturant.categories)}
       </div>
-    </div>
-    <div class="tag-menu">
-      ${parseTagItem(restaturant.categories)}
-    </div>
-    <div class="description-resturant">
-      <p>${restaturant.description}</p>
-    </div>
-    <div class="menus-restaurant">
-      <div class="heading">
-        <i class="fas fa-utensils fa-2x"></i> <p class="title">Foods</p>
+      <div class="description-resturant">
+        <p>${restaturant.description}</p>
       </div>
-      <div class="tag-menu">
-        ${parseTagItem(restaturant.menus.foods)}
+      <div class="menus-restaurant">
+        <div class="heading">
+          <i class="fas fa-utensils fa-2x"></i> <p class="title">Foods</p>
+        </div>
+        <div class="tag-menu food-menu">
+          ${parseTagItem(restaturant.menus.foods)}
+        </div>
       </div>
-    </div>
-    <div class="menus-restaurant">
-      <div class="heading">
-        <i class="fas fa-wine-glass-alt fa-2x"></i> <p class="title">Drinks</p>
-      </div>
-      <div class="tag-menu">
-        ${parseTagItem(restaturant.menus.drinks)}
+      <div class="menus-restaurant">
+        <div class="heading">
+          <i class="fas fa-wine-glass-alt fa-2x"></i> <p class="title">Drinks</p>
+        </div>
+        <div class="tag-menu">
+          ${parseTagItem(restaturant.menus.drinks)}
+        </div>
       </div>
     </div>
   `;
 };
 
+const createLikeButtonTemplate = () => {
+  return /* html */ `
+    <button aria-label="like this movie" id="likeButton" class="like">
+      <i class="far fa-heart" aria-hidden="true"></i>
+    </button>
+  `;
+};
+
+const createLikedButtonTemplate = () => {
+  return /* html */ `
+    <button aria-label="unlike this movie" id="likeButton" class="like">
+      <i class="fas fa-heart" aria-hidden="true"></i>
+    </button>
+  `;
+};
+
 export {
   createResturantItemTemplate,
-  createRestaurantDetailTemplate
+  createRestaurantDetailTemplate,
+  createLikeButtonTemplate,
+  createLikedButtonTemplate
 };

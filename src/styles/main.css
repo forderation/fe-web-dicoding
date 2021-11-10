@@ -140,6 +140,15 @@ body {
     border-radius: 10px;
 }
 
+.category-menu div {
+    background-color: #8BAF20;
+}
+
+.food-menu div {
+    background-color: #ECDABA;
+    color: black;
+}
+
 .place {
     margin-top: 12px;
     font-size: 18px;
@@ -314,6 +323,25 @@ footer a {
     margin: 16px;
     padding-bottom: 30px;
 }
+
+
+
+.like {
+    font-size: 18px;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    background-color: #F7B700;
+    color: white;
+    border: 0;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
 
 .detail-link {
     color: #F54748;

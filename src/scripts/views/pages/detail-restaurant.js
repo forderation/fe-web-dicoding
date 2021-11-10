@@ -1,13 +1,15 @@
+import $ from 'jquery';
 import Repositories from '../../globals/repositories';
 import UrlParser from '../../routes/url-parser';
-import $ from 'jquery';
 import { createRestaurantDetailTemplate } from '../templates/template-creator';
+import LikeButtonComponent from '../../utils/like-button-component';
 
 const DetailRestaurant = {
   async render () {
     return /* html */`
-      <div class="detail-page" id="detail-content">
+      <div id="detail-content">
       </div>
+      <div id="likeButtonContainer"></div>
     `;
   },
   async afterRender () {
@@ -16,6 +18,10 @@ const DetailRestaurant = {
     const restaurant = response.restaurant;
     const restaturantContainer = $('#detail-content');
     restaturantContainer.html(createRestaurantDetailTemplate(restaurant));
+    await LikeButtonComponent.init({
+      likeButtonContainer: $('#likeButtonContainer'),
+      restaurant: restaurant
+    });
   }
 };
 
