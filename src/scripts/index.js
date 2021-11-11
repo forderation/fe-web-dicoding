@@ -17,12 +17,16 @@ import swRegister from './worker/register-service';
 // custom element
 import RestaturantItem from './views/components/restaurant-item';
 import LikeButton from './views/components/like-button';
+import NotFound from './views/components/not-found';
+import EmptyFavorite from './views/components/empty-favorite';
 
 /**
  * Define custom element
  */
 customElements.define('restaurant-item', RestaturantItem);
 customElements.define('like-button', LikeButton);
+customElements.define('not-found', NotFound);
+customElements.define('empty-favorite', EmptyFavorite);
 
 const app = new App({
   button: $('#hamburger'),

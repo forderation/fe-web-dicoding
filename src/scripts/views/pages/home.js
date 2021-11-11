@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import { loadSpinner, stopSpinner } from '../../utils/spinner';
 import Repositories from '../../globals/repositories';
 
 const Home = {
@@ -32,8 +33,10 @@ const Home = {
     `;
   },
   async afterRender () {
-    const response = await Repositories.getListRestataurant();
     const restaturantContainer = $('#contents');
+    const spiner = loadSpinner(restaturantContainer);
+    const response = await Repositories.getListRestataurant();
+    stopSpinner(spiner);
     response.restaurants.forEach((restaturantData) => {
       const restaurantItem = document.createElement('restaurant-item');
       restaurantItem.restaturant = restaturantData;

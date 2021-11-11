@@ -15,12 +15,13 @@ const DetailRestaurant = {
   async afterRender () {
     const url = UrlParser.parseActiveWithoutCombiner();
     const response = await Repositories.getDetailRestaturant(url.id);
+    const restaturantContainer = $('#detail-content');
     if (response.error) {
-      window.location.hash = '#/not-found';
+      const notFoundElement = document.createElement('not-found');
+      restaturantContainer.html(notFoundElement);
       return;
     }
     const restaurant = response.restaurant;
-    const restaturantContainer = $('#detail-content');
     restaturantContainer.html(createRestaurantDetailTemplate(restaurant));
     await LikeButtonManager.init({
       likeButtonContainer: $('#likeButtonContainer'),
