@@ -15,7 +15,7 @@ const parseTagItem = (categories) => {
 const createRestaurantDetailTemplate = (restaturant) => {
   return /* html */`
     <img class="image-detail" src="${API_ENDPOINT.IMAGE(restaturant.pictureId)}" alt="${restaturant.name}" />
-    <div class="detail-page">
+    <div class="detail-page" id="detail-restaurant">
       <div class="heading-detail">
         <div class="head">
           <p class="title">${restaturant.name}</p>
@@ -54,24 +54,6 @@ const createRestaurantDetailTemplate = (restaturant) => {
   `;
 };
 
-const createLikeButtonTemplate = () => {
-  return /* html */ `
-    <button aria-label="like this movie" id="likeButton" class="like">
-      <i class="far fa-heart" aria-hidden="true"></i>
-    </button>
-  `;
-};
-
-const createLikedButtonTemplate = () => {
-  return /* html */ `
-    <button aria-label="unlike this movie" id="likeButton" class="like">
-      <i class="fas fa-heart" aria-hidden="true"></i>
-    </button>
-  `;
-};
-
 export {
-  createRestaurantDetailTemplate,
-  createLikeButtonTemplate,
-  createLikedButtonTemplate
+  createRestaurantDetailTemplate
 };

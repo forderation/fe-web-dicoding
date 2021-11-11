@@ -5,7 +5,7 @@ const LikedRestaturant = {
   async render () {
     return /* html */ `
     <div class="hero">
-      <img src="./images/heros/hero-image_4.jpg" alt="" />
+      <img src="./images/heros/hero-image_4.jpg" alt="Liked Foods" />
     </div>
     <div class="top-banner">
       <h1 id="banner-desc">Your Favorite Foods</h1>

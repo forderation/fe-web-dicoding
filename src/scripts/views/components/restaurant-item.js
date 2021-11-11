@@ -13,7 +13,7 @@ export default class RestaturantItem extends HTMLElement {
   render () {
     const restaturant = this._restaturant;
     this.innerHTML = /* html */ `
-    <div class="card">
+    <div class="card food-card">
         <section class="food-header">
             <div class="image-card">
                 <img
@@ -29,9 +29,11 @@ export default class RestaturantItem extends HTMLElement {
             <i class="fas fa-star fa-lg"></i> ${restaturant.rating}
             <h1 class="food-title">${restaturant.name}</h1>
             <p class="food-description">${restaturant.description}</p>
-            <a class="detail-link" href="${API_ENDPOINT.DETAIL_ROUTE(restaturant.id)}">Detail About ${restaturant.name}</a>
         </section>
     </div>
     `;
+    this.addEventListener('click', function () {
+      window.location.hash = API_ENDPOINT.DETAIL_ROUTE(restaturant.id);
+    });
   }
 }

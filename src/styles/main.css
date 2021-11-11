@@ -111,6 +111,11 @@ main {
     padding: 10px 8px;
 }
 
+.food-card {
+    height: 400px;
+    overflow: hidden;
+}
+
 .top-banner h1 {
     text-align: center;
 }

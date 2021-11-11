@@ -10,21 +10,19 @@ import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
 import '@fortawesome/fontawesome-free/js/brands';
 
-// import Restaturants from './components/restaurants.js';
-// import RestaturantItem from './components/restaurant-item.js';
-
-// import restaurantsData from './DATA';
+// App shell and service
 import App from './views/app';
 import swRegister from './worker/register-service';
 
-// components
+// custom element
 import RestaturantItem from './views/components/restaurant-item';
+import LikeButton from './views/components/like-button';
 
 /**
  * Define custom element
  */
 customElements.define('restaurant-item', RestaturantItem);
-// customElements.define('list-restaurant', Restaturants);
+customElements.define('like-button', LikeButton);
 
 const app = new App({
   button: $('#hamburger'),
@@ -40,25 +38,3 @@ $(window).on('load', function () {
   app.renderPage();
   swRegister();
 });
-
-// const contentElement = $('#contents')[0];
-// contentElement.restaurants = restaurantsData;
-
-/**
- * Event listener drawer
- */
-// const drawerElement = $('#drawer');
-// $('main').on('click', function (event) {
-//   drawerElement.toggleClass('open');
-//   event.stopPropagation();
-// });
-// $('#hamburger').on('click', function (event) {
-//   drawerElement.toggleClass('open');
-//   event.stopPropagation();
-// });
-
-/**
- * Add Font Awesome
- */
-// library.add(fas);
-// dom.i2svg();
