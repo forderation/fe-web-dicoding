@@ -3,38 +3,44 @@ import '../styles/main.css';
 import '../styles/responsive.css';
 
 import $ from 'jquery';
-import { library, dom } from '@fortawesome/fontawesome-svg-core';
-import { fas } from '@fortawesome/free-solid-svg-icons';
 
-import Restaturants from './components/restaurants.js';
-import RestaturantItem from './components/restaurant-item.js';
+// font awesome
+import '@fortawesome/fontawesome-free/js/fontawesome';
+import '@fortawesome/fontawesome-free/js/solid';
+import '@fortawesome/fontawesome-free/js/regular';
+import '@fortawesome/fontawesome-free/js/brands';
 
-import restaurantsData from './DATA';
+// App shell and service
+import App from './views/app';
+import swRegister from './worker/register-service';
+
+// custom element
+import RestaturantItem from './views/components/restaurant-item';
+import LikeButton from './views/components/like-button';
+import NotFound from './views/components/not-found';
+import EmptyFavorite from './views/components/empty-favorite';
+import DetailPage from './views/components/detail-page';
 
 /**
  * Define custom element
  */
 customElements.define('restaurant-item', RestaturantItem);
-customElements.define('list-restaurant', Restaturants);
+customElements.define('like-button', LikeButton);
+customElements.define('not-found', NotFound);
+customElements.define('empty-favorite', EmptyFavorite);
+customElements.define('detail-page', DetailPage);
 
-const contentElement = $('#contents')[0];
-contentElement.restaurants = restaurantsData;
-
-/**
- * Event listener drawer
- */
-const drawerElement = $('#drawer');
-$('main').on('click', function (event) {
-  drawerElement.toggleClass('open');
-  event.stopPropagation();
-});
-$('#hamburger').on('click', function (event) {
-  drawerElement.toggleClass('open');
-  event.stopPropagation();
+const app = new App({
+  button: $('#hamburger'),
+  content: $('#main-content'),
+  drawer: $('#drawer')
 });
 
-/**
- * Add Font Awesome
- */
-library.add(fas);
-dom.i2svg();
+$(window).on('hashchange', function () {
+  app.renderPage();
+});
+
+$(window).on('load', function () {
+  app.renderPage();
+  swRegister();
+});

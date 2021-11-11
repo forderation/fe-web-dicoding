@@ -3,6 +3,13 @@ body {
     font-family: 'Inter', 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
 }
 
 * {
@@ -77,11 +84,30 @@ body {
     color: #F7B700;
 }
 
+.fa-comment {
+    color: #F54748;
+}
+
+.fa-map-marker-alt {
+    color: #F54748;
+}
+
+.fa-utensils {
+    color: #F7B700;
+}
+
+.fa-wine-glass-alt {
+    color: #F7B700;
+}
+
 .explore-foods {
     display: grid;
     padding: 10px;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
+    position: relative;
+    min-height: 360px;
+    text-align: middle;
 }
 
 .card {
@@ -90,17 +116,116 @@ body {
     border-radius: 5px;
     margin: 4px;
     padding: 10px 8px;
-    height: 460px;
+}
+
+.food-card {
+    height: 400px;
+    overflow: hidden;
 }
 
 .top-banner h1 {
     text-align: center;
 }
 
+.image-detail {
+    max-height: 500px;
+    width: 100%;
+    object-fit: cover;    
+}
+
+.heading-detail {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.rating {
+    margin: 10px;
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+}
+
+.tag-menu {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+}
+
+.tag-review {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.tag-menu div {
+    padding: 10px;
+    margin: 0 14px 12px 0;
+    background-color: rgba(245, 71, 72, .8);
+    color: white;
+    border-radius: 10px;
+}
+
+.category-menu div {
+    background-color: #8BAF20;
+}
+
+.food-menu div {
+    background-color: #ECDABA;
+    color: black;
+}
+
+.place {
+    margin-top: 12px;
+    font-size: 18px;
+}
+
+.heading-detail > .head {
+    display: flex;
+    align-content: center;
+}
+
+.head > .title {
+    font-size: 30px;
+    font-weight: 700;
+}
+
 #banner-title {
     text-transform: uppercase;
     color: #F54748;
     font-size: 1.4em;
+}
+
+.menus-restaurant > .heading {
+    display: flex;
+    align-items: center;
+}
+
+.menus-restaurant > .heading > .title {
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.not-found img {
+    max-height: 200px;
+    margin: auto;
+    width: auto;
+    object-fit: cover;
+}
+
+.not-found figcaption {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.not-found p {
+    font-size: 18px;
+}
+
+.not-found {
+    margin: 100px 10px 100px 10px;
+    text-align: center;
+    height: 100%;
+    width: 100%;
 }
 
 #banner-desc {
@@ -123,6 +248,9 @@ body {
 .service figcaption {
     font-size: 1.4em;
     font-weight: 600;
+}
+
+.service > * {
     text-align: center;
 }
 
@@ -190,16 +318,24 @@ body {
     transform: translate(0, 0);
 }
 
-.navigation a {
-    background-color: #F54748;
-    padding: 10px;
-    color: white;
+.app-bar a {
     text-decoration: none;
+    color: black;
+}
+
+.navigation a {
     margin: 0 6px 0 6px;
+}
+
+.btn-primary {
+    background-color: #F54748;
+    padding: 14px;
+    text-decoration: none;
     font-size: 1em;
     border-radius: 5px;
     min-width: 44px;
     min-height: 44px;
+    color: white !important;
 }
 
 img {
@@ -225,11 +361,36 @@ footer {
     background-color: #F54748;
     text-align: center;
     color: white;
+    width: 100%;
 }
 
 footer a {
     color: white;
+    font-size: 16px;
+    padding: 16px 0 16px 0;
 }
+
+.detail-page {
+    margin: 16px;
+    padding-bottom: 30px;
+}
+
+.like {
+    font-size: 18px;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    background-color: #F7B700;
+    color: white;
+    border: 0;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
 
 .detail-link {
     color: #F54748;
