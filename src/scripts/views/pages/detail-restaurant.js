@@ -2,7 +2,6 @@ import $ from 'jquery';
 import Repositories from '../../globals/repositories';
 import UrlParser from '../../routes/url-parser';
 import LikeButtonManager from '../../utils/like-button-manager';
-import { createRestaurantDetailTemplate } from '../templates/template-creator';
 
 const DetailRestaurant = {
   async render () {
@@ -22,7 +21,9 @@ const DetailRestaurant = {
       return;
     }
     const restaurant = response.restaurant;
-    restaturantContainer.html(createRestaurantDetailTemplate(restaurant));
+    const detailPage = document.createElement('detail-page');
+    detailPage.restaurant = restaurant;
+    restaturantContainer.html(detailPage);
     await LikeButtonManager.init({
       likeButtonContainer: $('#likeButtonContainer'),
       restaurant: restaurant

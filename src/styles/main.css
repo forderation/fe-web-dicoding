@@ -84,6 +84,10 @@ main {
     color: #F7B700;
 }
 
+.fa-comment {
+    color: #F54748;
+}
+
 .fa-map-marker-alt {
     color: #F54748;
 }
@@ -145,6 +149,11 @@ main {
 .tag-menu {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
+}
+
+.tag-review {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
 }
 
 .tag-menu div {

@@ -19,6 +19,7 @@ import RestaturantItem from './views/components/restaurant-item';
 import LikeButton from './views/components/like-button';
 import NotFound from './views/components/not-found';
 import EmptyFavorite from './views/components/empty-favorite';
+import DetailPage from './views/components/detail-page';
 
 /**
  * Define custom element
@@ -27,6 +28,7 @@ customElements.define('restaurant-item', RestaturantItem);
 customElements.define('like-button', LikeButton);
 customElements.define('not-found', NotFound);
 customElements.define('empty-favorite', EmptyFavorite);
+customElements.define('detail-page', DetailPage);
 
 const app = new App({
   button: $('#hamburger'),

@@ -16,16 +16,13 @@ export default class RestaturantItem extends HTMLElement {
     <div class="card food-card">
         <section class="food-header">
             <div class="image-card">
-                <img
-                src="${API_ENDPOINT.IMAGE(restaturant.pictureId)}"
-                alt="${restaturant.name}"
-                />
+                <img src="${API_ENDPOINT.IMAGE(restaturant.pictureId)}" alt="${restaturant.name}" />
                 <div class="label-city">
-                <p>${restaturant.city}</p>
+                    <p>${restaturant.city}</p>
                 </div>
             </div>
-            </section>
-            <section class="food-body">
+        </section>
+        <section class="food-body">
             <i class="fas fa-star fa-lg"></i> ${restaturant.rating}
             <h1 class="food-title">${restaturant.name}</h1>
             <p class="food-description">${restaturant.description}</p>
