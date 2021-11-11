@@ -1,6 +1,5 @@
 import $ from 'jquery';
 import Repositories from '../../globals/repositories';
-import { createResturantItemTemplate } from '../templates/template-creator';
 
 const Home = {
   render () {
@@ -35,9 +34,10 @@ const Home = {
   async afterRender () {
     const response = await Repositories.getListRestataurant();
     const restaturantContainer = $('#contents');
-    response.restaurants.forEach((restaturant) => {
-      const template = createResturantItemTemplate(restaturant);
-      restaturantContainer.append(template);
+    response.restaurants.forEach((restaturantData) => {
+      const restaurantItem = document.createElement('restaurant-item');
+      restaurantItem.restaturant = restaturantData;
+      restaturantContainer.append(restaurantItem);
     });
   }
 };

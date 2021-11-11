@@ -1,6 +1,6 @@
-import FavRestaturantIdb from '../data/fav-restaurant-idb';
+import FavRestaturantIdb from '../../data/fav-restaurant-idb';
 import $ from 'jquery';
-import { createLikeButtonTemplate, createLikedButtonTemplate } from '../views/templates/template-creator';
+import { createLikeButtonTemplate, createLikedButtonTemplate } from '../templates/template-creator';
 
 const LikeButtonComponent = {
 
@@ -9,7 +9,6 @@ const LikeButtonComponent = {
   async init ({ likeButtonContainer, restaurant }) {
     this._likeButtonContainer = likeButtonContainer;
     this._restaturant = restaurant;
-    console.log(this._restaturant);
     await this._renderButton();
   },
 

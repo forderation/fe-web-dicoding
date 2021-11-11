@@ -2,7 +2,7 @@ import $ from 'jquery';
 import Repositories from '../../globals/repositories';
 import UrlParser from '../../routes/url-parser';
 import { createRestaurantDetailTemplate } from '../templates/template-creator';
-import LikeButtonComponent from '../../utils/like-button-component';
+import LikeButtonComponent from '../components/like-button-component';
 
 const DetailRestaurant = {
   async render () {

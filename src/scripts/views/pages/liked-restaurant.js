@@ -1,6 +1,5 @@
 import $ from 'jquery';
 import FavRestaturantIdb from '../../data/fav-restaurant-idb';
-import { createResturantItemTemplate } from '../templates/template-creator';
 
 const LikedRestaturant = {
   async render () {
@@ -17,9 +16,10 @@ const LikedRestaturant = {
   async afterRender () {
     const restaturants = await FavRestaturantIdb.getListRestaturant();
     const restaturantContainer = $('#contents');
-    restaturants.forEach(function (restaturant) {
-      const template = createResturantItemTemplate(restaturant);
-      restaturantContainer.append(template);
+    restaturants.forEach((restaturantData) => {
+      const restaurantItem = document.createElement('restaurant-item');
+      restaurantItem.restaturant = restaturantData;
+      restaturantContainer.append(restaurantItem);
     });
   }
 };
