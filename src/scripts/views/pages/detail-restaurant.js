@@ -2,10 +2,13 @@ import $ from 'jquery';
 import Repositories from '../../globals/repositories';
 import UrlParser from '../../routes/url-parser';
 import LikeButtonManager from '../../utils/like-button-manager';
+import { loadSpinner, stopSpinner } from '../../utils/spinner';
 
 const DetailRestaurant = {
   async render () {
     return /* html */`
+      <div id="error-section">
+      </div>
       <div id="detail-content">
       </div>
       <div id="likeButtonContainer"></div>
@@ -13,8 +16,15 @@ const DetailRestaurant = {
   },
   async afterRender () {
     const url = UrlParser.parseActiveWithoutCombiner();
-    const response = await Repositories.getDetailRestaturant(url.id);
     const restaturantContainer = $('#detail-content');
+    loadSpinner(restaturantContainer);
+    let response = null;
+    try {
+      response = await Repositories.getDetailRestaturant(url.id);
+    } catch (_) {
+      this.afterLoad(true);
+    }
+    this.afterLoad();
     if (response.error) {
       const notFoundElement = document.createElement('not-found');
       restaturantContainer.html(notFoundElement);
@@ -28,6 +38,17 @@ const DetailRestaurant = {
       likeButtonContainer: $('#likeButtonContainer'),
       restaurant: restaurant
     });
+  },
+  afterLoad (isError = false) {
+    if (isError) {
+      $('#detail-content').hide();
+      const errorContainer = $('#error-section');
+      const errorComponent = document.createElement('error-internal');
+      errorContainer.append(errorComponent);
+    } else {
+      $('#error-section').remove();
+    }
+    stopSpinner();
   }
 };
 

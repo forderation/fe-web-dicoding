@@ -20,6 +20,7 @@ import LikeButton from './views/components/like-button';
 import NotFound from './views/components/not-found';
 import EmptyFavorite from './views/components/empty-favorite';
 import DetailPage from './views/components/detail-page';
+import ErrorInternal from './views/components/error-internal';
 
 /**
  * Define custom element
@@ -29,6 +30,7 @@ customElements.define('like-button', LikeButton);
 customElements.define('not-found', NotFound);
 customElements.define('empty-favorite', EmptyFavorite);
 customElements.define('detail-page', DetailPage);
+customElements.define('error-internal', ErrorInternal);
 
 const app = new App({
   button: $('#hamburger'),

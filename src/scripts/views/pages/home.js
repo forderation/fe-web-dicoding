@@ -8,7 +8,9 @@ const Home = {
       <div class="hero">
         <img src="./images/heros/hero-image_2.jpg" alt="Explore Foods" />
       </div>
-      <div class="top-banner">
+      <div id="error-section">
+      </div>
+      <div class="top-banner" id="banner-food">
         <h1 id="banner-title">What we serve</h1>
         <div class="services">
           <section class="service">
@@ -34,14 +36,32 @@ const Home = {
   },
   async afterRender () {
     const restaturantContainer = $('#contents');
-    const spiner = loadSpinner(restaturantContainer);
-    const response = await Repositories.getListRestataurant();
-    stopSpinner(spiner);
+    loadSpinner(restaturantContainer);
+    let response = null;
+    try {
+      response = await Repositories.getListRestataurant();
+    } catch (_) {
+      this.afterLoad(true);
+      return;
+    }
+    this.afterLoad();
     response.restaurants.forEach((restaturantData) => {
       const restaurantItem = document.createElement('restaurant-item');
       restaurantItem.restaturant = restaturantData;
       restaturantContainer.append(restaurantItem);
     });
+  },
+  afterLoad (isError = false) {
+    if (isError) {
+      $('#banner-food').hide();
+      $('#contents').hide();
+      const errorContainer = $('#error-section');
+      const errorComponent = document.createElement('error-internal');
+      errorContainer.append(errorComponent);
+    } else {
+      $('#error-section').remove();
+    }
+    stopSpinner();
   }
 };
 
