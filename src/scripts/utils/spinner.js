@@ -29,8 +29,8 @@ function loadSpinner (selector) {
   return spinner.spin(contentElement);
 }
 
-function stopSpinner (localSpinner) {
-  localSpinner.stop();
+function stopSpinner () {
+  spinner.stop();
 }
 
 export { loadSpinner, stopSpinner };
