@@ -11,7 +11,7 @@ export default class NotFound extends HTMLElement {
                 <figcaption>Page Not Found</figcaption>
                 <p>Oops looks like you did not found your page.</p>
                 <br/>
-                <a class="btn-primary" href="/"> <i class="fas fa-search"></i> Find Another Restaurants</a>
+                <a class="btn-primary" href="#/"> <i class="fas fa-search"></i> Find Another Restaurants</a>
             </section>
         </div>
     `;
