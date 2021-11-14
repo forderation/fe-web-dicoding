@@ -404,8 +404,15 @@ img {
 }
 
 .food-title {
+    margin-top: 14px;
+}
+
+.food-title a {
     font-size: 18px;
     font-weight: 600;
+    text-decoration: none;
+    color: black;
+    padding: 12px 0 12px 0;
 }
 
 .food-description {
