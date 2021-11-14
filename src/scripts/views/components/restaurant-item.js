@@ -13,7 +13,7 @@ export default class RestaturantItem extends HTMLElement {
   render () {
     const restaturant = this._restaturant;
     this.innerHTML = /* html */ `
-    <div class="card food-card">
+    <div class="card food-card pointer">
         <section class="food-header">
             <div class="image-card">
                 <img src="${API_ENDPOINT.IMAGE(restaturant.pictureId)}" alt="${restaturant.name}" />
