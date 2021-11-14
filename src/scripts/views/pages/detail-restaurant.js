@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import Repositories from '../../globals/repositories';
+import Repositories from '../../data/repositories';
 import UrlParser from '../../routes/url-parser';
 import LikeButtonManager from '../../utils/like-button-manager';
 import { loadSpinner, stopSpinner } from '../../utils/spinner';

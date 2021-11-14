@@ -79,6 +79,7 @@ form {
 
 .label-city p {
     text-overflow: ellipsis;
+    margin-left: 6px;
     overflow: hidden;
     color: white;
     padding: 6px;
@@ -212,12 +213,12 @@ form {
     font-size: 18px;
 }
 
-.heading-detail > .head {
+.heading-detail>.head {
     display: flex;
     align-content: center;
 }
 
-.head > .title {
+.head>.title {
     font-size: 30px;
     font-weight: 700;
 }
@@ -228,12 +229,12 @@ form {
     font-size: 1.4em;
 }
 
-.section-restaurant > .heading {
+.section-restaurant>.heading {
     display: flex;
     align-items: center;
 }
 
-.section-restaurant > .heading > .title {
+.section-restaurant>.heading>.title {
     margin-left: 10px;
     font-size: 18px;
     font-weight: 600;
@@ -284,7 +285,7 @@ form {
     font-weight: 600;
 }
 
-.service > * {
+.service>* {
     text-align: center;
 }
 
@@ -414,18 +415,47 @@ img {
     overflow: hidden;
 }
 
+.apps-more > img {
+    height: 200px;
+    margin: auto;
+}
+
+.download {
+    display: flex;
+    justify-content: center;
+}
+
+.download img {
+    padding: 4px;
+    width: 120px;
+}
+
 footer {
-    margin-top: 4px;
-    padding: 2px;
-    background-color: #F54748;
-    text-align: center;
-    color: white;
+    box-shadow: 0px -3px 3px rgba(41, 41, 41, 0.2);
+    display: flex;
+    justify-content: center;
+    margin-top: 34px;
+    padding: 8px;
     width: 100%;
 }
 
-footer a {
-    color: white;
+.copyright .brand {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.brand-description {
     font-size: 16px;
+    margin-top: 30px;
+}
+
+footer>div {
+    padding: 10px;
+}
+
+footer a {
+    font-size: 16px;
+    text-decoration: none;
     padding: 16px 0 16px 0;
 }
 
@@ -449,7 +479,7 @@ footer a {
     display: flex;
     align-items: center;
     justify-content: center;
-} 
+}
 
 .detail-link {
     color: #F54748;
