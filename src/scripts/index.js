@@ -38,6 +38,11 @@ const app = new App({
   drawer: $('#drawer')
 });
 
+$('#skip-link').on('click', function () {
+  document.querySelector('#main-content').scrollIntoView();
+  document.querySelector('#main-content').focus();
+});
+
 $(window).on('hashchange', function () {
   app.renderPage();
 });
