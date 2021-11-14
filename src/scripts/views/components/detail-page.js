@@ -77,7 +77,7 @@ export default class DetailPage extends HTMLElement {
                 </div>
                 <div class="form-group">
                   <label for="input-review">Review</label>
-                  <textarea class="form-control" id="input-review" rows="3" placeholder="How you expect this restaurant"></textarea>
+                  <textarea class="form-control" id="input-review" rows="3" placeholder="How you expect this restaurant" required></textarea>
                 </div>
                 <div class="btn-wrapper">
                   <button id="submit-review" class="btn-primary"> <i class="far fa-paper-plane"></i> Submit</button>
