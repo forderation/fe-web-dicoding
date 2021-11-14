@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import { loadSpinner, stopSpinner } from '../../utils/spinner';
-import Repositories from '../../globals/repositories';
+import Repositories from '../../data/repositories';
 
 const Home = {
   render () {
