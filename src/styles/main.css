@@ -98,12 +98,13 @@ form {
     position: absolute;
     top: -60px;
     left: 0;
+    text-transform: uppercase;
     color: #F54748;
     min-width: 44px;
     min-height: 44px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 8px;
-    z-index: 100;
+    z-index: 2;
 }
 
 #skip-link:focus {
@@ -314,7 +315,7 @@ form {
     border-bottom-right-radius: 10px;
     position: absolute;
     width: 100%;
-    z-index: 999;
+    z-index: 1;
     left: 0;
     background: white;
     box-shadow: 0px 3px 4px -2px rgb(49, 53, 59, 0.6);
@@ -358,7 +359,7 @@ form {
 .app-bar {
     position: fixed;
     width: 100%;
-    z-index: 9999;
+    z-index: 1;
 }
 
 .app-bar a {
