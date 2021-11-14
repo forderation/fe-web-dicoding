@@ -339,6 +339,8 @@ form {
 
 #hamburger {
     display: none;
+    background-color: white;
+    border: none;
     margin-right: 10px;
     min-width: 44px;
     min-height: 44px;
@@ -353,7 +355,7 @@ form {
 
 #drawer.open {
     display: block;
-    transform: translate(0, 0);
+    transform: translate(0, -5px);
 }
 
 .app-bar {
