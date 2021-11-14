@@ -11,7 +11,7 @@ const DetailRestaurant = {
       </div>
       <div id="detail-content">
       </div>
-      <div id="likeButtonContainer"></div>
+      <div id="likeButtonContainer" tabindex="1"></div>
     `;
   },
   async afterRender () {

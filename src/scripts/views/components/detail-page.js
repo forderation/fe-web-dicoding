@@ -29,13 +29,13 @@ export default class DetailPage extends HTMLElement {
     <div class="detail-page" id="detail-restaurant">
         <div class="heading-detail">
             <div class="head">
-                <p class="title">${restaurant.name}</p>
-                <div class="rating">
+                <p class="title" tabindex="0">${restaurant.name}</p>
+                <div class="rating" tabindex="0">
                     <i class="fas fa-star"></i>
                     <p>${restaurant.rating}</p>
                 </div>
             </div>
-            <div class="place">
+            <div class="place" tabindex="0">
                 <i class="fas fa-map-marker-alt fa-2x"></i> ${restaurant.city}
                 <p class="address">${restaurant.address}</p>
             </div>
@@ -44,12 +44,12 @@ export default class DetailPage extends HTMLElement {
             ${this.parseTagItem(restaurant.categories)}
         </div>
         <div class="description-resturant">
-            <p>${restaurant.description}</p>
+            <p tabindex="0">${restaurant.description}</p>
         </div>
         <section class="section-restaurant">
             <div class="heading">
                 <i class="fas fa-utensils fa-2x"></i>
-                <p class="title">Foods</p>
+                <p class="title" tabindex="0">Foods</p>
             </div>
             <div class="tag-menu">
                 ${this.parseTagItem(restaurant.menus.foods)}
@@ -58,7 +58,7 @@ export default class DetailPage extends HTMLElement {
         <section class="section-restaurant">
             <div class="heading">
                 <i class="fas fa-wine-glass-alt fa-2x"></i>
-                <p class="title">Drinks</p>
+                <p class="title" tabindex="0">Drinks</p>
             </div>
             <div class="tag-menu">
                 ${this.parseTagItem(restaurant.menus.drinks)}
@@ -67,10 +67,10 @@ export default class DetailPage extends HTMLElement {
         <section class="section-restaurant">
             <div class="heading">
                 <i class="far fa-comment-dots fa-2x"></i>
-                <p class="title">Add Review</p>
+                <p class="title" tabindex="0">Add Review</p>
             </div>
             <div class="add-comment">
-              <form id="form-review" tabindex="0">
+              <form id="form-review">
                 <div class="form-group">
                   <label for="input-name">Name</label>
                   <input type="text" class="form-control" id="input-name" aria-describedby="name" placeholder="Input your name" required />
@@ -88,7 +88,7 @@ export default class DetailPage extends HTMLElement {
         <section class="section-restaurant">
             <div class="heading">
                 <i class="far fa-comments fa-2x"></i>
-                <p class="title">List of Review (${restaurant.customerReviews.length})</p>
+                <p class="title" tabindex="0">List of Review (${restaurant.customerReviews.length})</p>
             </div>
             <div class="tag-review">
                 ${this.parseReviewItem(restaurant.customerReviews)}
@@ -124,7 +124,7 @@ export default class DetailPage extends HTMLElement {
 
   parseTagItem (categories) {
     const divMapping = categories.map((category) => {
-      return /* html */ `<div class="card">${category.name}</div>`;
+      return /* html */ `<div class="card" tabindex="0">${category.name}</div>`;
     });
     return divMapping.join(' ');
   };
@@ -132,7 +132,7 @@ export default class DetailPage extends HTMLElement {
   parseReviewItem (reviews) {
     const divMapping = reviews.map((review) => {
       return /* html */ `
-      <div class="card">
+      <div class="card" tabindex="0">
         <p>${review.name} : ${review.review}</p>
         <p>${review.date}</p>
       </div>`;

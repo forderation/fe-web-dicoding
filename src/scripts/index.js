@@ -1,7 +1,8 @@
-import 'regenerator-runtime'; /* for async await transpile */
+/* for async await transpile */
+import 'regenerator-runtime';
+
 import '../styles/main.css';
 import '../styles/responsive.css';
-
 import $ from 'jquery';
 
 // font awesome
@@ -12,7 +13,7 @@ import '@fortawesome/fontawesome-free/js/brands';
 
 // App shell and service
 import App from './views/app';
-import swRegister from './worker/register-service';
+import swRegister from './sw-register';
 
 // custom element
 import RestaturantItem from './views/components/restaurant-item';

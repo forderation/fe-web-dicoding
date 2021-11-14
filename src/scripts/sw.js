@@ -1,4 +1,6 @@
-import CacheManager from '../utils/cache-manager';
+import 'regenerator-runtime';
+import CacheManager from './utils/cache-manager';
+
 const { assets } = global.serviceWorkerOption;
 
 self.addEventListener('install', function (event) {
