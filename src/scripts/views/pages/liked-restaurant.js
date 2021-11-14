@@ -11,7 +11,7 @@ const LikedRestaturant = {
     <div id="error-section">
     </div>
     <div class="top-banner" id="fav-title">
-      <h1 id="banner-desc">Your Favorite Foods</h1>
+      <h1 id="banner-desc">Your Favorite Restaurants</h1>
     </div>
     <div id="contents" class="explore-foods">
     </div>

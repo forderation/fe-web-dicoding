@@ -28,6 +28,22 @@ class Repositories {
       throw new Error(ERROR_MESSAGE);
     }
   }
+
+  static async postReview (review) {
+    try {
+      const response = await fetch(API_ENDPOINT.SUBMIT_REVIEW, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(review)
+      });
+      return response.json();
+    } catch (error) {
+      toast().error(ERROR_MESSAGE + error.toString());
+      throw new Error(ERROR_MESSAGE);
+    }
+  }
 }
 
 export default Repositories;

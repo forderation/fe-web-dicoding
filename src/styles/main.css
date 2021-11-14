@@ -10,16 +10,44 @@ body {
 
 main {
     flex: 1;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 110px !important;
 }
 
 * {
     box-sizing: border-box;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 4px 0 10px 0;
+}
+
+.form-control {
+    font-family: 'Inter', 'Roboto', sans-serif;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    margin-top: 6px;
+    font-size: 1rem;
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+}
+
 .app-title {
-    font-size: 2em;
+    font-size: 24px;
     margin: 8px;
-    font-weight: 700;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 .app-bar, .brand-bar {
@@ -29,7 +57,7 @@ main {
 }
 
 .brand-bar {
-    padding: 4px;
+    padding: 2px;
 }
 
 .image-card img {
@@ -58,9 +86,10 @@ main {
 }
 
 .hero img {
-    height: 550px;
+    height: 440px;
     width: 100%;
     object-fit: cover;
+    border-radius: 8px;
 }
 
 #skip-link {
@@ -84,12 +113,12 @@ main {
     color: #F7B700;
 }
 
-.fa-comment {
+.fa-comments, .fa-comment-dots, .fa-map-marker-alt {
     color: #F54748;
 }
 
-.fa-map-marker-alt {
-    color: #F54748;
+.fa-paper-plane {
+    color: white;
 }
 
 .fa-utensils {
@@ -104,7 +133,7 @@ main {
     display: grid;
     padding: 10px;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
+    grid-gap: 18px;
     position: relative;
     min-height: 360px;
     text-align: middle;
@@ -112,10 +141,9 @@ main {
 
 .card {
     background-color: white;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: rgb(49 53 59 / 12%) 0px 1px 6px 0px;
     border-radius: 5px;
-    margin: 4px;
-    padding: 10px 8px;
+    padding: 4px;
 }
 
 .food-card {
@@ -130,7 +158,8 @@ main {
 .image-detail {
     max-height: 500px;
     width: 100%;
-    object-fit: cover;    
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 .heading-detail {
@@ -154,23 +183,28 @@ main {
 .tag-review {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
+    grid-gap: 14px;
 }
 
 .tag-menu div {
     padding: 10px;
     margin: 0 14px 12px 0;
-    background-color: rgba(245, 71, 72, .8);
-    color: white;
     border-radius: 10px;
+    text-transform: capitalize;
 }
 
 .category-menu div {
-    background-color: #8BAF20;
+    color: #F7B700;
+    font-weight: 600;
 }
 
 .food-menu div {
     background-color: #ECDABA;
     color: black;
+}
+
+.pointer {
+    cursor: pointer;
 }
 
 .place {
@@ -194,12 +228,12 @@ main {
     font-size: 1.4em;
 }
 
-.menus-restaurant > .heading {
+.section-restaurant > .heading {
     display: flex;
     align-items: center;
 }
 
-.menus-restaurant > .heading > .title {
+.section-restaurant > .heading > .title {
     margin-left: 10px;
     font-size: 18px;
     font-weight: 600;
@@ -256,7 +290,7 @@ main {
 
 .app-brand {
     object-fit: contain;
-    height: 60px;
+    height: 40px;
 }
 
 .navigation {
@@ -280,7 +314,9 @@ main {
     position: absolute;
     width: 100%;
     z-index: 999;
+    left: 0;
     background: white;
+    box-shadow: 0px 3px 4px -2px rgb(49, 53, 59, 0.6);
 }
 
 .navigation-mobile ul li a {
@@ -318,6 +354,12 @@ main {
     transform: translate(0, 0);
 }
 
+.app-bar {
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+}
+
 .app-bar a {
     text-decoration: none;
     color: black;
@@ -327,15 +369,32 @@ main {
     margin: 0 6px 0 6px;
 }
 
+.btn-wrapper {
+    display: flex;
+    justify-content: end;
+}
+
 .btn-primary {
     background-color: #F54748;
-    padding: 14px;
+    padding: 10px;
     text-decoration: none;
+    border: none;
     font-size: 1em;
+    cursor: pointer;
     border-radius: 5px;
     min-width: 44px;
     min-height: 44px;
     color: white !important;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: rgb(245, 71, 72, 0.3);
+    color: black !important;
+}
+
+.btn-primary:hover .fa-paper-plane {
+    color: black !important;
 }
 
 img {
