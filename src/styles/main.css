@@ -40,7 +40,7 @@ form {
     font-size: 1rem;
     display: block;
     width: 100%;
-    padding: 0.375rem 0.75rem;
+    padding: 1rem;
 }
 
 .app-title {
@@ -386,8 +386,8 @@ form {
     font-size: 1em;
     cursor: pointer;
     border-radius: 5px;
-    min-width: 44px;
-    min-height: 44px;
+    min-width: 45px;
+    min-height: 45px;
     color: white !important;
     transition: 0.3s;
 }

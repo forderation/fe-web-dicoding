@@ -33,11 +33,6 @@ const DetailRestaurant = {
     const restaurant = response.restaurant;
     const detailPage = document.createElement('detail-page');
     detailPage.restaurant = restaurant;
-    const that = this;
-    detailPage.reloadCallback = function () {
-      that.render();
-      that.afterRender();
-    };
     restaturantContainer.html(detailPage);
     await LikeButtonManager.init({
       likeButtonContainer: $('#likeButtonContainer'),

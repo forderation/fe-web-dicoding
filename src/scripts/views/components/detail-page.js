@@ -3,6 +3,7 @@ import $ from 'jquery';
 import toast from '../../utils/toastr';
 import UrlParser from '../../routes/url-parser';
 import Repositories from '../../data/repositories';
+import DateParser from '../../utils/date-parser';
 
 export default class DetailPage extends HTMLElement {
   set restaurant (restaurantData) {
@@ -12,14 +13,6 @@ export default class DetailPage extends HTMLElement {
 
   get restaurant () {
     return this._restaurant;
-  }
-
-  set reloadCallback (reloadCallback) {
-    this._reloadCallback = reloadCallback;
-  }
-
-  get reloadCallback () {
-    return this._reloadCallback;
   }
 
   render () {
@@ -99,8 +92,13 @@ export default class DetailPage extends HTMLElement {
   }
 
   connectedCallback () {
+    const that = this;
     $('#form-review').on('submit', {
-      reload: this._reloadCallback
+      reload: function (restaurant) {
+        that.restaurant = restaurant;
+        that.connectedCallback();
+      },
+      restaurant: that.restaurant
     }, this.submitReview);
   }
 
@@ -119,7 +117,15 @@ export default class DetailPage extends HTMLElement {
       return toast().error('Opps sorry we are got error:', response.message);
     }
     toast().success('success added review. thank you');
-    event.data.reload();
+    const restaurant = event.data.restaurant;
+    console.log(restaurant);
+    restaurant.customerReviews.push({
+      name: review.name,
+      review: review.review,
+      date: DateParser.getDateNow()
+    });
+    console.log(restaurant);
+    event.data.reload(restaurant);
   }
 
   parseTagItem (categories) {
