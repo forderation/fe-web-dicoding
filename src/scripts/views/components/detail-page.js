@@ -118,13 +118,11 @@ export default class DetailPage extends HTMLElement {
     }
     toast().success('success added review. thank you');
     const restaurant = event.data.restaurant;
-    console.log(restaurant);
     restaurant.customerReviews.push({
       name: review.name,
       review: review.review,
       date: DateParser.getDateNow()
     });
-    console.log(restaurant);
     event.data.reload(restaurant);
   }
 
