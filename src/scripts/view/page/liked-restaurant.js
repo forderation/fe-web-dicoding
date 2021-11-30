@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import FavRestaturantIdb from '../../data/fav-restaurant-idb';
-import { loadSpinner, stopSpinner } from '../../utils/spinner';
+import { loadSpinner, stopSpinner } from '../../util/spinner';
 
 const LikedRestaturant = {
   async render () {

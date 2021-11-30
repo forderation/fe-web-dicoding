@@ -1,9 +1,9 @@
-import API_ENDPOINT from '../../globals/api-endpoint';
+import API_ENDPOINT from '../../global/api-endpoint';
 import $ from 'jquery';
-import toast from '../../utils/toastr';
-import UrlParser from '../../routes/url-parser';
+import toast from '../../util/toastr';
+import UrlParser from '../../route/url-parser';
 import Repositories from '../../data/repositories';
-import DateParser from '../../utils/date-parser';
+import DateParser from '../../util/date-parser';
 
 export default class DetailPage extends HTMLElement {
   set restaurant (restaurantData) {
