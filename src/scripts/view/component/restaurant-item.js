@@ -1,4 +1,4 @@
-import API_ENDPOINT from '../../globals/api-endpoint';
+import API_ENDPOINT from '../../global/api-endpoint';
 
 export default class RestaturantItem extends HTMLElement {
   set restaturant (restaturant) {

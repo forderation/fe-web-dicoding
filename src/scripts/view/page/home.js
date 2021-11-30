@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { loadSpinner, stopSpinner } from '../../utils/spinner';
+import { loadSpinner, stopSpinner } from '../../util/spinner';
 import Repositories from '../../data/repositories';
 
 const Home = {

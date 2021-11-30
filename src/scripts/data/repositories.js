@@ -1,5 +1,5 @@
-import toast from '../utils/toastr';
-import API_ENDPOINT from '../globals/api-endpoint';
+import toast from '../util/toastr';
+import API_ENDPOINT from '../global/api-endpoint';
 
 const ERROR_MESSAGE = 'sorry there is something problem. error message: ';
 

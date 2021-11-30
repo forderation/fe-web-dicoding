@@ -12,16 +12,16 @@ import '@fortawesome/fontawesome-free/js/regular';
 import '@fortawesome/fontawesome-free/js/brands';
 
 // App shell and service
-import App from './views/app';
+import App from './view/app';
 import swRegister from './sw-register';
 
 // custom element
-import RestaturantItem from './views/components/restaurant-item';
-import LikeButton from './views/components/like-button';
-import NotFound from './views/components/not-found';
-import EmptyFavorite from './views/components/empty-favorite';
-import DetailPage from './views/components/detail-page';
-import ErrorInternal from './views/components/error-internal';
+import RestaturantItem from './view/component/restaurant-item';
+import LikeButton from './view/component/like-button';
+import NotFound from './view/component/not-found';
+import EmptyFavorite from './view/component/empty-favorite';
+import DetailPage from './view/component/detail-page';
+import ErrorInternal from './view/component/error-internal';
 
 /**
  * Define custom element

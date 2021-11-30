@@ -1,8 +1,8 @@
 import $ from 'jquery';
 import Repositories from '../../data/repositories';
-import UrlParser from '../../routes/url-parser';
-import LikeButtonManager from '../../utils/like-button-manager';
-import { loadSpinner, stopSpinner } from '../../utils/spinner';
+import UrlParser from '../../route/url-parser';
+import LikeButtonManager from '../../util/like-button-manager';
+import { loadSpinner, stopSpinner } from '../../util/spinner';
 
 const DetailRestaurant = {
   async render () {
