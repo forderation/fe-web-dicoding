@@ -1,5 +1,4 @@
 import API_ENDPOINT from '../../global/api-endpoint';
-import $ from 'jquery';
 import toast from '../../util/toastr';
 import UrlParser from '../../route/url-parser';
 import RestaurantRepository from '../../data/repository';
@@ -93,19 +92,19 @@ export default class DetailPage extends HTMLElement {
 
   connectedCallback () {
     const that = this;
-    $('#form-review').on('submit', {
-      reload: function (restaurant) {
-        that.restaurant = restaurant;
-        that.connectedCallback();
-      },
-      restaurant: that.restaurant
-    }, this.submitReview);
+    document.addEventListener('detail-page-reload', function (event) {
+      that.render();
+      that.connectedCallback();
+    });
+    document.querySelector('#form-review').addEventListener('submit', function (event) {
+      that.submitReview(event, that);
+    });
   }
 
-  async submitReview (event) {
+  async submitReview (event, that) {
     event.preventDefault();
-    const inputName = $('#input-name').val();
-    const inputReview = $('#input-review').val();
+    const inputName = document.querySelector('#input-name').value;
+    const inputReview = document.querySelector('#input-review').value;
     const url = UrlParser.parseActiveWithoutCombiner();
     const review = {
       id: url.id,
@@ -117,13 +116,12 @@ export default class DetailPage extends HTMLElement {
       return toast().error('Oops sorry we are got error:', response.message);
     }
     toast().success('success added review. thank you');
-    const restaurant = event.data.restaurant;
-    restaurant.customerReviews.push({
+    that.restaurant.customerReviews.push({
       name: review.name,
       review: review.review,
       date: DateParser.getDateNow()
     });
-    event.data.reload(restaurant);
+    document.dispatchEvent(new CustomEvent('detail-page-reload'));
   }
 
   parseTagItem (categories) {

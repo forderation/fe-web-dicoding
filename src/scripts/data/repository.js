@@ -1,7 +1,7 @@
 import toast from '../util/toastr';
 import API_ENDPOINT from '../global/api-endpoint';
 
-const ERROR_MESSAGE = 'sorry there is something problem. error message: ';
+const ERROR_MESSAGE = 'Sorry there is something problem: ';
 
 class RestaurantRepository {
   static async getListRestaurant () {

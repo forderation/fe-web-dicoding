@@ -2,7 +2,7 @@ import Spin from '../../../util/spinner';
 
 export default class HomeView {
   constructor () {
-    this._spinner = Spin('#detail-content');
+    this._spinner = new Spin('#detail-content');
   }
 
   getTemplate () {
@@ -50,7 +50,7 @@ export default class HomeView {
     restaurants.forEach((restaurant) => {
       const restaurantItem = document.createElement('restaurant-item');
       restaurantItem.restaurant = restaurant;
-      restaurantContainer.innerHTML += restaurantItem;
+      restaurantContainer.appendChild(restaurantItem);
     });
   }
 
@@ -59,6 +59,6 @@ export default class HomeView {
     document.querySelector('#contents').style.display = 'none';
     const errorContainer = document.querySelector('#error-section');
     const errorComponent = document.createElement('error-internal');
-    errorContainer.innerHTML += errorComponent;
+    errorContainer.appendChild(errorComponent);
   }
 }

@@ -6,16 +6,16 @@ export default class FavListRestaurantPresenter {
   }
 
   async _showFavListRestaurant () {
-    this.setIsLoading(true);
+    this._view.setIsLoading(true);
     let restaurants = null;
     try {
       restaurants = await this._favRestaurantDB.getListRestaurant();
     } catch (_) {
-      this.setIsLoading(false);
+      this._view.setIsLoading(false);
       this._view.showError();
       return;
     }
-    this.setIsLoading(false);
+    this._view.setIsLoading(false);
     if (restaurants == null || restaurants.length < 1) {
       this._view.showEmptyList();
       return;

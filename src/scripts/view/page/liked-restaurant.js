@@ -1,11 +1,8 @@
 import FavRestaurantIdb from '../../data/fav-restaurant-idb';
-import Spin from '../../util/spinner';
 import FavListRestaurantPresenter from './fav-list-restaurant/fav-list-restaurant-presenter';
 import FavListRestaurantView from './fav-list-restaurant/fav-list-restaurant-view';
 
-const view = new FavListRestaurantView({
-  spinner: Spin
-});
+const view = new FavListRestaurantView();
 const LikedRestaurant = {
   render () {
     return view.getTemplate();
