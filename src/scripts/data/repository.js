@@ -3,8 +3,8 @@ import API_ENDPOINT from '../global/api-endpoint';
 
 const ERROR_MESSAGE = 'sorry there is something problem. error message: ';
 
-class Repositories {
-  static async getListRestataurant () {
+class RestaurantRepository {
+  static async getListRestaurant () {
     let response;
     try {
       response = await fetch(API_ENDPOINT.LIST);
@@ -19,7 +19,7 @@ class Repositories {
     }
   }
 
-  static async getDetailRestaturant (id) {
+  static async getDetailRestaurant (id) {
     try {
       const response = await fetch(API_ENDPOINT.DETAIL(id));
       return response.json();
@@ -46,4 +46,4 @@ class Repositories {
   }
 }
 
-export default Repositories;
+export default RestaurantRepository;

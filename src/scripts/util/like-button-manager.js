@@ -1,4 +1,4 @@
-import FavRestaturantIdb from '../data/fav-restaurant-idb';
+import FavRestaurantIdb from '../data/fav-restaurant-idb';
 import $ from 'jquery';
 import toast from './toastr';
 
@@ -8,19 +8,19 @@ const LikeButtonManager = {
 
   async init ({ likeButtonContainer, restaurant }) {
     this._likeButtonContainer = likeButtonContainer;
-    this._restaturant = restaurant;
+    this._restaurant = restaurant;
     await this._renderButton();
   },
 
   async _renderButton () {
-    const { id } = this._restaturant;
+    const { id } = this._restaurant;
     const isRestaurantExist = await this._isRestaurantExist(id);
     isRestaurantExist ? this._renderLiked() : this._renderLike();
   },
 
   async _isRestaurantExist (id) {
-    const restaturant = await FavRestaturantIdb.getRestaurant(id);
-    return !!restaturant;
+    const restaurant = await FavRestaurantIdb.getRestaurant(id);
+    return !!restaurant;
   },
 
   _renderLiked () {
@@ -30,8 +30,8 @@ const LikeButtonManager = {
     const likeButton = $(this.TAG_LIKE_BUTTON);
     const that = this;
     likeButton.on('click', async () => {
-      await FavRestaturantIdb.deleteRestaurant(that._restaturant.id);
-      toast().warning(`removed ${that._restaturant.name} from favorite restaurant`.toLowerCase());
+      await FavRestaurantIdb.deleteRestaurant(that._restaurant.id);
+      toast().warning(`removed ${that._restaurant.name} from favorite restaurant`.toLowerCase());
       that._renderButton();
     });
   },
@@ -43,8 +43,8 @@ const LikeButtonManager = {
     const likeButton = $(this.TAG_LIKE_BUTTON);
     const that = this;
     likeButton.on('click', async () => {
-      await FavRestaturantIdb.putRestaurant(that._restaturant);
-      toast().success(`added ${that._restaturant.name} to favorite restaurant`.toLowerCase());
+      await FavRestaurantIdb.putRestaurant(that._restaurant);
+      toast().success(`added ${that._restaurant.name} to favorite restaurant`.toLowerCase());
       that._renderButton();
     });
   }

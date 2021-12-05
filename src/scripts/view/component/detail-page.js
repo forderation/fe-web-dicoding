@@ -2,7 +2,7 @@ import API_ENDPOINT from '../../global/api-endpoint';
 import $ from 'jquery';
 import toast from '../../util/toastr';
 import UrlParser from '../../route/url-parser';
-import Repositories from '../../data/repositories';
+import RestaurantRepository from '../../data/repository';
 import DateParser from '../../util/date-parser';
 
 export default class DetailPage extends HTMLElement {
@@ -112,9 +112,9 @@ export default class DetailPage extends HTMLElement {
       name: inputName,
       review: inputReview
     };
-    const response = await Repositories.postReview(review);
+    const response = await RestaurantRepository.postReview(review);
     if (response.error) {
-      return toast().error('Opps sorry we are got error:', response.message);
+      return toast().error('Oops sorry we are got error:', response.message);
     }
     toast().success('success added review. thank you');
     const restaurant = event.data.restaurant;

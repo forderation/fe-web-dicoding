@@ -1,8 +1,7 @@
 import { Spinner } from 'spin.js';
 import 'spin.js/spin.css';
-import $ from 'jquery';
 
-const opts = {
+const defaultOpt = {
   lines: 12, // The number of lines to draw
   length: 69, // The length of each line
   width: 14, // The line thickness
@@ -22,15 +21,21 @@ const opts = {
   className: 'spinner' // The CSS class to assign to the spinner
 };
 
-const spinner = new Spinner(opts);
+export default class Spin {
+  constructor (selector, opt) {
+    this._spinner = new Spinner({
+      ...defaultOpt,
+      ...opt
+    });
+    this._selector = selector;
+  }
 
-function loadSpinner (selector) {
-  const contentElement = $(selector)[0];
-  return spinner.spin(contentElement);
+  loadSpinner () {
+    const contentElement = document.querySelector(this._selector);
+    this._spinner.spin(contentElement);
+  }
+
+  stopSpinner () {
+    this._spinner.stop();
+  }
 }
-
-function stopSpinner () {
-  spinner.stop();
-}
-
-export { loadSpinner, stopSpinner };

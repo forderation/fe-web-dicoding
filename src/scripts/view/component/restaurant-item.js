@@ -1,38 +1,38 @@
 import API_ENDPOINT from '../../global/api-endpoint';
 
 export default class RestaturantItem extends HTMLElement {
-  set restaturant (restaturant) {
-    this._restaturant = restaturant;
+  set restaurant (restaurant) {
+    this._restaurant = restaurant;
     this.render();
   }
 
-  get restaturant () {
-    return this._restaturant;
+  get restaurant () {
+    return this._restaurant;
   }
 
   render () {
-    const restaturant = this._restaturant;
+    const restaurant = this._restaurant;
     this.innerHTML = /* html */ `
       <div class="card food-card pointer">
           <section class="food-header">
               <div class="image-card">
-                  <img src="${API_ENDPOINT.IMAGE(restaturant.pictureId)}" alt="${restaturant.name}" />
+                  <img src="${API_ENDPOINT.IMAGE(restaurant.pictureId)}" alt="${restaurant.name}" />
                   <div class="label-city">
-                      <p>${restaturant.city}</p>
+                      <p>${restaurant.city}</p>
                   </div>
               </div>
           </section>
           <section class="food-body">
-              <i class="fas fa-star fa-lg"></i> ${restaturant.rating}
+              <i class="fas fa-star fa-lg"></i> ${restaurant.rating}
               <div class="food-title">
-                <a href="${API_ENDPOINT.DETAIL_ROUTE(restaturant.id)}">${restaturant.name}</a>
+                <a href="${API_ENDPOINT.DETAIL_ROUTE(restaurant.id)}">${restaurant.name}</a>
               </div>
-              <p class="food-description">${restaturant.description}</p>
+              <p class="food-description">${restaurant.description}</p>
           </section>
       </div>
     `;
     this.addEventListener('click', function () {
-      window.location.hash = API_ENDPOINT.DETAIL_ROUTE(restaturant.id);
+      window.location.hash = API_ENDPOINT.DETAIL_ROUTE(restaurant.id);
     });
   }
 }
