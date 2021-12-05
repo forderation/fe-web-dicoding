@@ -1,11 +1,8 @@
 import RestaurantRepository from '../../data/repository';
-import Spin from '../../util/spinner';
 import HomePresenter from './home/home-presenter';
 import HomeView from './home/home-view';
 
-const view = new HomeView({
-  spinner: Spin
-});
+const view = new HomeView();
 
 const Home = {
   render () {

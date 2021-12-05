@@ -1,6 +1,6 @@
 import API_ENDPOINT from '../../global/api-endpoint';
 
-export default class RestaturantItem extends HTMLElement {
+export default class RestaurantItem extends HTMLElement {
   set restaurant (restaurant) {
     this._restaurant = restaurant;
     this.render();

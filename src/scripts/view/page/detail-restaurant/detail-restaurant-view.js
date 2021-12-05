@@ -28,7 +28,7 @@ export default class DetailRestaurantView {
     const restaurantContainer = document.querySelector('#detail-content');
     const detailPage = document.createElement('detail-page');
     detailPage.restaurant = restaurant;
-    restaurantContainer.innerHTML += detailPage;
+    restaurantContainer.appendChild(detailPage);
     await this._likeButtonManager.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
       restaurant: restaurant
@@ -39,12 +39,12 @@ export default class DetailRestaurantView {
   showError () {
     const errorContainer = document.querySelector('#error-section');
     const errorComponent = document.createElement('error-internal');
-    errorContainer.innerHTML += errorComponent;
+    errorContainer.appendChild(errorComponent);
   }
 
   showNotFound () {
     const restaurantContainer = document.querySelector('#detail-content');
     const notFoundElement = document.createElement('not-found');
-    restaurantContainer.innerHTML += notFoundElement;
+    restaurantContainer.appendChild(notFoundElement);
   }
 }

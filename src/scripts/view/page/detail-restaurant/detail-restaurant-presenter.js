@@ -20,7 +20,7 @@ export default class DetailRestaurantPresenter {
     this._detailRestaurantView.setIsLoading(true);
     let response = null;
     try {
-      response = await this._repository.getDetailRestaurant(this.url);
+      response = await this._repository.getDetailRestaurant(this._url.id);
     } catch (_) {
       this._detailRestaurantView.setIsLoading(false);
       this._detailRestaurantView.showError();

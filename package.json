@@ -46,7 +46,6 @@
   },
   "dependencies": {
     "idb": "^6.1.5",
-    "jquery": "^3.6.0",
     "regenerator-runtime": "^0.13.5",
     "serviceworker-webpack-plugin": "^1.0.1",
     "spin.js": "^4.1.1",

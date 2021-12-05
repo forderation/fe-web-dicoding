@@ -33,14 +33,14 @@ export default class FavListRestaurantView {
     restaurants.forEach((restaurant) => {
       const restaurantItem = document.createElement('restaurant-item');
       restaurantItem.restaurant = restaurant;
-      restaurantContainer.innerHTML += restaurantItem;
+      restaurantContainer.appendChild(restaurantItem);
     });
   }
 
   showEmptyList () {
     const restaurantContainer = document.querySelector('#contents');
     const notFoundElement = document.createElement('empty-favorite');
-    restaurantContainer.innerHTML = notFoundElement;
+    restaurantContainer.appendChild(notFoundElement);
     restaurantContainer.classList.remove('explore-foods');
   }
 
@@ -49,6 +49,6 @@ export default class FavListRestaurantView {
     document.querySelector('#contents').style.display = 'none';
     const errorContainer = document.querySelector('#error-section');
     const errorComponent = document.createElement('error-internal');
-    errorContainer.innerHTML += errorComponent;
+    errorContainer.appendChild(errorComponent);
   }
 }

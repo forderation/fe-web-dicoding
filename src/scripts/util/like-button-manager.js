@@ -1,5 +1,4 @@
 import FavRestaurantIdb from '../data/fav-restaurant-idb';
-import $ from 'jquery';
 import toast from './toastr';
 
 const LikeButtonManager = {
@@ -24,28 +23,30 @@ const LikeButtonManager = {
   },
 
   _renderLiked () {
-    const likeButtonTemplate = document.createElement('like-button');
-    likeButtonTemplate.like = true;
-    this._likeButtonContainer.html(likeButtonTemplate);
-    const likeButton = $(this.TAG_LIKE_BUTTON);
+    const likeButtonElement = document.createElement('like-button');
+    likeButtonElement.like = true;
+    this._likeButtonContainer.innerHTML = '';
+    this._likeButtonContainer.appendChild(likeButtonElement);
+    const likeButton = document.querySelector(this.TAG_LIKE_BUTTON);
     const that = this;
-    likeButton.on('click', async () => {
+    likeButton.addEventListener('click', async function () {
       await FavRestaurantIdb.deleteRestaurant(that._restaurant.id);
       toast().warning(`removed ${that._restaurant.name} from favorite restaurant`.toLowerCase());
-      that._renderButton();
+      await that._renderButton();
     });
   },
 
   _renderLike () {
-    const likeButtonTemplate = document.createElement('like-button');
-    likeButtonTemplate.like = false;
-    this._likeButtonContainer.html(likeButtonTemplate);
-    const likeButton = $(this.TAG_LIKE_BUTTON);
+    const likeButtonElement = document.createElement('like-button');
+    likeButtonElement.like = false;
+    this._likeButtonContainer.innerHTML = '';
+    this._likeButtonContainer.appendChild(likeButtonElement);
+    const likeButton = document.querySelector(this.TAG_LIKE_BUTTON);
     const that = this;
-    likeButton.on('click', async () => {
+    likeButton.addEventListener('click', async function () {
       await FavRestaurantIdb.putRestaurant(that._restaurant);
       toast().success(`added ${that._restaurant.name} to favorite restaurant`.toLowerCase());
-      that._renderButton();
+      await that._renderButton();
     });
   }
 };
