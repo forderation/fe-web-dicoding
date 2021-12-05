@@ -1,5 +1,5 @@
 import 'regenerator-runtime';
-import CacheManager from './utils/cache-manager';
+import CacheManager from './util/cache-manager';
 
 const { assets } = global.serviceWorkerOption;
 

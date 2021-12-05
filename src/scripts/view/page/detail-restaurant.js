@@ -1,54 +1,26 @@
-import $ from 'jquery';
-import Repositories from '../../data/repositories';
+import RestaurantRepository from '../../data/repository';
 import UrlParser from '../../route/url-parser';
 import LikeButtonManager from '../../util/like-button-manager';
-import { loadSpinner, stopSpinner } from '../../util/spinner';
+import Spin from '../../util/spinner';
+import DetailRestaurantPresenter from './detail-restaurant/detail-restaurant-presenter';
+import DetailRestaurantView from './detail-restaurant/detail-restaurant-view';
+
+const view = new DetailRestaurantView({
+  likeButtonManager: LikeButtonManager,
+  spinner: Spin
+});
 
 const DetailRestaurant = {
   async render () {
-    return /* html */`
-      <div id="error-section">
-      </div>
-      <div id="detail-content">
-      </div>
-      <div id="likeButtonContainer" tabindex="1"></div>
-    `;
+    return view.getTemplate();
   },
-  async afterRender () {
-    const url = UrlParser.parseActiveWithoutCombiner();
-    const restaturantContainer = $('#detail-content');
-    loadSpinner(restaturantContainer);
-    let response = null;
-    try {
-      response = await Repositories.getDetailRestaturant(url.id);
-    } catch (_) {
-      this.afterLoad(true);
-    }
-    this.afterLoad();
-    if (response.error) {
-      const notFoundElement = document.createElement('not-found');
-      restaturantContainer.html(notFoundElement);
-      return;
-    }
-    const restaurant = response.restaurant;
-    const detailPage = document.createElement('detail-page');
-    detailPage.restaurant = restaurant;
-    restaturantContainer.html(detailPage);
-    await LikeButtonManager.init({
-      likeButtonContainer: $('#likeButtonContainer'),
-      restaurant: restaurant
+  afterRender () {
+    // eslint-disable-next-line no-new
+    new DetailRestaurantPresenter({
+      detailRestaurantView: view,
+      urlParser: UrlParser,
+      repository: RestaurantRepository
     });
-  },
-  afterLoad (isError = false) {
-    if (isError) {
-      $('#detail-content').hide();
-      const errorContainer = $('#error-section');
-      const errorComponent = document.createElement('error-internal');
-      errorContainer.append(errorComponent);
-    } else {
-      $('#error-section').remove();
-    }
-    stopSpinner();
   }
 };
 
