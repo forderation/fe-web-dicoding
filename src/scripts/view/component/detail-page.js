@@ -1,5 +1,5 @@
 import API_ENDPOINT from '../../global/api-endpoint';
-import toast from '../../util/toastr';
+import Toast from '../../util/toastr';
 import UrlParser from '../../route/url-parser';
 import RestaurantRepository from '../../data/repository';
 import DateParser from '../../util/date-parser';
@@ -113,9 +113,9 @@ export default class DetailPage extends HTMLElement {
     };
     const response = await RestaurantRepository.postReview(review);
     if (response.error) {
-      return toast().error('Oops sorry we are got error:', response.message);
+      return Toast.notify().error('Oops sorry we are got error:', response.message);
     }
-    toast().success('success added review. thank you');
+    Toast.notify().success('success added review. thank you');
     that.restaurant.customerReviews.push({
       name: review.name,
       review: review.review,

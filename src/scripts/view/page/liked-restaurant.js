@@ -3,6 +3,7 @@ import FavListRestaurantPresenter from './fav-list-restaurant/fav-list-restauran
 import FavListRestaurantView from './fav-list-restaurant/fav-list-restaurant-view';
 
 const view = new FavListRestaurantView();
+
 const LikedRestaurant = {
   render () {
     return view.getTemplate();

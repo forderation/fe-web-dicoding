@@ -30,17 +30,24 @@ form {
     margin: 4px 0 10px 0;
 }
 
+.form-wrap {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin: 10px;
+}
+
 .form-control {
     font-family: 'Inter', 'Roboto', sans-serif;
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
-    margin-top: 6px;
+    /* margin-top: 6px; */
     font-size: 1rem;
     display: block;
     width: 100%;
-    padding: 1rem;
+    padding: 10px;
 }
 
 .app-title {

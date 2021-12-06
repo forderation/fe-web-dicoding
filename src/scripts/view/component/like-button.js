@@ -14,7 +14,7 @@ export default class LikeButton extends HTMLElement {
 
   likeButton () {
     return /* html */`
-    <button aria-label="like this movie" id="likeButton" class="like">
+    <button aria-label="like this restaurant" id="likeButton" class="like">
       <i class="far fa-heart" aria-hidden="true"></i>
     </button>
     `;
@@ -22,7 +22,7 @@ export default class LikeButton extends HTMLElement {
 
   unlikeButton () {
     return /* html */`
-    <button aria-label="unlike this movie" id="likeButton" class="like">
+    <button aria-label="unlike this restaurant" id="likeButton" class="like">
         <i class="fas fa-heart" aria-hidden="true"></i>
     </button>
     `;

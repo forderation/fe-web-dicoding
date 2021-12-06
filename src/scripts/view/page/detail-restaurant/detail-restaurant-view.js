@@ -1,4 +1,5 @@
 import Spin from '../../../util/spinner';
+import Toast from '../../../util/toastr';
 
 export default class DetailRestaurantView {
   constructor ({ likeButtonManager }) {
@@ -31,7 +32,8 @@ export default class DetailRestaurantView {
     restaurantContainer.appendChild(detailPage);
     await this._likeButtonManager.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
-      restaurant: restaurant
+      restaurant: restaurant,
+      toast: Toast
     });
     document.querySelector('#error-section').remove();
   }

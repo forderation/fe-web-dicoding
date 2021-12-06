@@ -21,6 +21,7 @@ import NotFound from './view/component/not-found';
 import EmptyFavorite from './view/component/empty-favorite';
 import DetailPage from './view/component/detail-page';
 import ErrorInternal from './view/component/error-internal';
+import EmptySearch from './view/component/empty-search';
 
 /**
  * Define custom element
@@ -31,6 +32,7 @@ customElements.define('not-found', NotFound);
 customElements.define('empty-favorite', EmptyFavorite);
 customElements.define('detail-page', DetailPage);
 customElements.define('error-internal', ErrorInternal);
+customElements.define('empty-search', EmptySearch);
 
 const app = new App({
   button: document.querySelector('#hamburger'),

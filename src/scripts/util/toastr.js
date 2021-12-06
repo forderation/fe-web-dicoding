@@ -1,7 +1,7 @@
 import toastr from 'toastr';
 import 'toastr/build/toastr.min.css';
 
-function toast (noAutoClose = false) {
+function notify (noAutoClose = false) {
   const baseConfig = {
     closeButton: true,
     debug: false,
@@ -35,4 +35,6 @@ function toast (noAutoClose = false) {
   return toastr;
 }
 
-export default toast;
+const Toast = { notify };
+
+export default Toast;
