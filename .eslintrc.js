@@ -2,11 +2,15 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    node: true
+    node: true,
+    jasmine: true,
+    'codeceptjs/codeceptjs': true
   },
   extends: [
     'standard',
-    'plugin:import/recommended'
+    'plugin:import/recommended',
+    'plugin:jasmine/recommended',
+    'plugin:codeceptjs/recommended'
   ],
   parserOptions: {
     ecmaVersion: 12,
@@ -16,6 +20,8 @@ module.exports = {
     semi: [2, 'always']
   },
   plugins: [
-    'import'
+    'import',
+    'jasmine',
+    'codeceptjs'
   ]
 };

@@ -1,4 +1,4 @@
-import toast from '../util/toastr';
+import Toast from '../util/toastr';
 import API_ENDPOINT from '../global/api-endpoint';
 
 const ERROR_MESSAGE = 'Sorry there is something problem: ';
@@ -14,7 +14,7 @@ class RestaurantRepository {
       }
       return responseJson;
     } catch (error) {
-      toast().error(ERROR_MESSAGE + error.toString());
+      Toast.notify().error(ERROR_MESSAGE + error.toString());
       throw new Error(ERROR_MESSAGE);
     }
   }
@@ -24,7 +24,7 @@ class RestaurantRepository {
       const response = await fetch(API_ENDPOINT.DETAIL(id));
       return response.json();
     } catch (error) {
-      toast().error(ERROR_MESSAGE + error.toString());
+      Toast.notify().error(ERROR_MESSAGE + error.toString());
       throw new Error(ERROR_MESSAGE);
     }
   }
@@ -40,7 +40,7 @@ class RestaurantRepository {
       });
       return response.json();
     } catch (error) {
-      toast().error(ERROR_MESSAGE + error.toString());
+      Toast.notify().error(ERROR_MESSAGE + error.toString());
       throw new Error(ERROR_MESSAGE);
     }
   }

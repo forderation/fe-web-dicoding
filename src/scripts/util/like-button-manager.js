@@ -1,13 +1,13 @@
 import FavRestaurantIdb from '../data/fav-restaurant-idb';
-import toast from './toastr';
 
 const LikeButtonManager = {
 
   TAG_LIKE_BUTTON: '#likeButton',
 
-  async init ({ likeButtonContainer, restaurant }) {
+  async init ({ likeButtonContainer, restaurant, toast }) {
     this._likeButtonContainer = likeButtonContainer;
     this._restaurant = restaurant;
+    this._toast = toast;
     await this._renderButton();
   },
 
@@ -31,7 +31,9 @@ const LikeButtonManager = {
     const that = this;
     likeButton.addEventListener('click', async function () {
       await FavRestaurantIdb.deleteRestaurant(that._restaurant.id);
-      toast().warning(`removed ${that._restaurant.name} from favorite restaurant`.toLowerCase());
+      if (that._toast) {
+        that._toast.notify().warning(`removed ${that._restaurant.name} from favorite restaurant`.toLowerCase());
+      }
       await that._renderButton();
     });
   },
@@ -45,7 +47,9 @@ const LikeButtonManager = {
     const that = this;
     likeButton.addEventListener('click', async function () {
       await FavRestaurantIdb.putRestaurant(that._restaurant);
-      toast().success(`added ${that._restaurant.name} to favorite restaurant`.toLowerCase());
+      if (that._toast) {
+        that._toast.notify().success(`added ${that._restaurant.name} to favorite restaurant`.toLowerCase());
+      }
       await that._renderButton();
     });
   }

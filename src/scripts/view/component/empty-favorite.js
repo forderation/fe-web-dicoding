@@ -9,9 +9,9 @@ export default class EmptyFavorite extends HTMLElement {
               <section class="not-found">
                   <img src="./images/empty.jpg" alt="Empty Favorite Restaurant" />
                   <figcaption>Favorite Restaurants Empty</figcaption>
-                  <p>Oops looks like you did not have favorite restaturants.</p>
+                  <p>Oops looks like you did not have favorite restaurants.</p>
                   <br/>
-                  <a class="btn-primary" href="#/"> <i class="fas fa-search"></i> Find Restaurants</a>
+                  <a class="btn-primary" href="#/"> <i class="fas fa-search"></i> Explore Restaurants</a>
               </section>
           </div>
       `;
