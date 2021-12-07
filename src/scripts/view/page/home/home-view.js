@@ -5,14 +5,26 @@ export default class HomeView {
     this._spinner = new Spin('#detail-content');
   }
 
+  set query (query) {
+    this._query = query;
+  }
+
+  get query () {
+    return this._query;
+  }
+
   getTemplate () {
     return /* html */ `
       <div class="hero">
         <img src="./images/heros/hero-image_2.jpg" alt="Explore Foods" />
       </div>
-      <div id="error-section">
-      </div>
       <div class="top-banner" id="banner-food">
+        <form id="form-search">
+          <div class="form-wrap">
+            <input type="text" class="form-control" id="input-search" aria-describedby="search" placeholder="search with type restaurant name" />
+            <button id="submit-search" class="btn-primary"> <i class="fas fa-search"></i> Search</button>
+          </div>
+        </form>
         <h1 id="banner-title" tabindex="0">What we serve</h1>
         <div class="services">
           <section class="service">
@@ -33,7 +45,10 @@ export default class HomeView {
         </div>
         <h1 id="banner-desc" tabindex="0">Explore Your Foods</h1>
       </div>
-      <div id="contents" class="explore-foods"></div>
+      <div id="home" tabindex="-1">
+        <div id="contents" class="explore-foods"></div>
+        <div id="placeholder"></div>
+      </div>
     `;
   }
 
@@ -45,20 +60,49 @@ export default class HomeView {
     }
   }
 
+  setCallbackSearch () {
+    const that = this;
+    document.querySelector('#form-search').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const query = document.querySelector('#input-search').value;
+      that.query = query;
+      document.dispatchEvent(new CustomEvent('search-restaurant'));
+    });
+  }
+
+  focus () {
+    document.querySelector('#home').focus();
+  }
+
   showHome (restaurants) {
     const restaurantContainer = document.querySelector('#contents');
+    document.querySelector('#contents').style.display = 'grid';
+    restaurantContainer.innerHTML = '';
     restaurants.forEach((restaurant) => {
       const restaurantItem = document.createElement('restaurant-item');
       restaurantItem.restaurant = restaurant;
       restaurantContainer.appendChild(restaurantItem);
     });
+    document.querySelector('#placeholder').style.display = 'none';
   }
 
   showError () {
-    document.querySelector('#banner-food').style.display = 'none';
+    document.querySelector('#placeholder').style.display = 'block';
     document.querySelector('#contents').style.display = 'none';
-    const errorContainer = document.querySelector('#error-section');
+    const errorContainer = document.querySelector('#placeholder');
+    errorContainer.innerHTML = '';
     const errorComponent = document.createElement('error-internal');
     errorContainer.appendChild(errorComponent);
+    document.querySelector('#contents').style.display = 'none';
+  }
+
+  showEmptySearch (keyword) {
+    document.querySelector('#placeholder').style.display = 'block';
+    const restaurantContainer = document.querySelector('#placeholder');
+    restaurantContainer.innerHTML = '';
+    const notSearchElement = document.createElement('empty-search');
+    notSearchElement.keyword = keyword;
+    restaurantContainer.appendChild(notSearchElement);
+    document.querySelector('#contents').style.display = 'none';
   }
 }

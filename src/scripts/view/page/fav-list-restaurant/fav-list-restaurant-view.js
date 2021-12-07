@@ -22,7 +22,7 @@ export default class FavListRestaurantView {
       <h1 id="banner-desc">Your Favorite Restaurants</h1>
       <form id="form-search">
         <div class="form-wrap">
-          <input type="text" class="form-control" id="input-search" aria-describedby="search" placeholder="type restaurant name" />
+          <input type="text" class="form-control" id="input-search" aria-describedby="search" placeholder="search with type restaurant name" />
           <button id="submit-search" class="btn-primary"> <i class="fas fa-search"></i> Search</button>
         </div>
       </form>

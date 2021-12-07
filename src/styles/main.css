@@ -34,7 +34,7 @@ form {
     display: flex;
     flex-direction: row;
     gap: 10px;
-    margin: 10px;
+    margin: 10px 0 10px 0;
 }
 
 .form-control {
@@ -43,7 +43,6 @@ form {
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
-    /* margin-top: 6px; */
     font-size: 1rem;
     display: block;
     width: 100%;

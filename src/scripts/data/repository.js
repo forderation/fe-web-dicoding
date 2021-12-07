@@ -44,6 +44,24 @@ class RestaurantRepository {
       throw new Error(ERROR_MESSAGE);
     }
   }
+
+  static async searchRestaurant (query) {
+    let response = [];
+    if (!query || query.length < 1) {
+      return response;
+    }
+    try {
+      response = await fetch(API_ENDPOINT.SEARCH(query));
+      const responseJson = await response.json();
+      if (responseJson.error) {
+        throw responseJson.message || ERROR_MESSAGE;
+      }
+      return responseJson;
+    } catch (error) {
+      Toast.notify().error(ERROR_MESSAGE + error.toString());
+      throw new Error(ERROR_MESSAGE);
+    }
+  }
 }
 
 export default RestaurantRepository;
