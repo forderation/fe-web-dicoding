@@ -154,7 +154,7 @@ form {
     padding: 4px;
 }
 
-.food-card {
+.restaurant-card {
     height: 400px;
     overflow: hidden;
 }
@@ -411,11 +411,11 @@ img {
     display: block;
 }
 
-.food-title {
+.restaurant-title {
     margin-top: 14px;
 }
 
-.food-title a {
+.restaurant-title a {
     font-size: 18px;
     font-weight: 600;
     text-decoration: none;
@@ -423,7 +423,7 @@ img {
     padding: 12px 0 12px 0;
 }
 
-.food-description {
+.restaurant-description {
     font-size: 16px;
     font-weight: 500;
     max-height: 100px;
