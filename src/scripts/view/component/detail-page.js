@@ -21,7 +21,7 @@ export default class DetailPage extends HTMLElement {
     <div class="detail-page" id="detail-restaurant">
         <div class="heading-detail">
             <div class="head">
-                <p class="title" tabindex="0">${restaurant.name}</p>
+                <p class="title restaurant-name" tabindex="0">${restaurant.name}</p>
                 <div class="rating" tabindex="0">
                     <i class="fas fa-star"></i>
                     <p>${restaurant.rating}</p>

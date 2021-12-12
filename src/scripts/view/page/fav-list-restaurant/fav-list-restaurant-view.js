@@ -1,8 +1,7 @@
-import Spin from '../../../util/spinner';
 
 export default class FavListRestaurantView {
-  constructor () {
-    this._spinner = new Spin('#contents');
+  constructor ({ spinner }) {
+    this._spinner = spinner;
   }
 
   set query (query) {
@@ -35,10 +34,12 @@ export default class FavListRestaurantView {
   }
 
   setIsLoading (state) {
-    if (state) {
-      this._spinner.loadSpinner();
-    } else {
-      this._spinner.stopSpinner();
+    if (this._spinner) {
+      if (state) {
+        this._spinner.loadSpinner();
+      } else {
+        this._spinner.stopSpinner();
+      }
     }
   }
 
@@ -47,7 +48,7 @@ export default class FavListRestaurantView {
     document.querySelector('#form-search').addEventListener('submit', function (event) {
       event.preventDefault();
       const query = document.querySelector('#input-search').value;
-      that.query = query;
+      that.query = query.trim();
       document.dispatchEvent(new CustomEvent('search-favorite-restaurant'));
     });
   }
@@ -62,36 +63,39 @@ export default class FavListRestaurantView {
       restaurantContainer.appendChild(restaurantItem);
     });
     document.querySelector('#placeholder').style.display = 'none';
+    restaurantContainer.dispatchEvent(new Event('restaurants:updated'));
   }
 
   showEmptySearch (keyword) {
     document.querySelector('#placeholder').style.display = 'block';
-    const restaurantContainer = document.querySelector('#placeholder');
-    restaurantContainer.innerHTML = '';
+    const placeHolder = document.querySelector('#placeholder');
+    placeHolder.innerHTML = '';
     const notSearchElement = document.createElement('empty-search');
     notSearchElement.keyword = keyword;
-    restaurantContainer.appendChild(notSearchElement);
+    placeHolder.appendChild(notSearchElement);
     document.querySelector('#contents').style.display = 'none';
+    placeHolder.dispatchEvent(new Event('restaurants:updated'));
   }
 
   showEmptyList () {
     document.querySelector('#placeholder').style.display = 'block';
     document.querySelector('#fav-title').style.display = 'none';
-    const restaurantContainer = document.querySelector('#placeholder');
-    restaurantContainer.innerHTML = '';
+    const placeHolder = document.querySelector('#placeholder');
+    placeHolder.innerHTML = '';
     const notFoundElement = document.createElement('empty-favorite');
-    restaurantContainer.appendChild(notFoundElement);
+    placeHolder.appendChild(notFoundElement);
     document.querySelector('#contents').style.display = 'none';
+    placeHolder.dispatchEvent(new Event('restaurants:updated'));
   }
 
   showError () {
     document.querySelector('#placeholder').style.display = 'block';
     document.querySelector('#fav-title').style.display = 'none';
     document.querySelector('#contents').style.display = 'none';
-    const errorContainer = document.querySelector('#placeholder');
-    errorContainer.innerHTML = '';
+    const placeHolder = document.querySelector('#placeholder');
+    placeHolder.innerHTML = '';
     const errorComponent = document.createElement('error-internal');
-    errorContainer.appendChild(errorComponent);
+    placeHolder.appendChild(errorComponent);
     document.querySelector('#contents').style.display = 'none';
   }
 }

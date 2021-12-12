@@ -13,21 +13,21 @@ export default class RestaurantItem extends HTMLElement {
   render () {
     const restaurant = this._restaurant;
     this.innerHTML = /* html */ `
-      <div class="card food-card pointer">
-          <section class="food-header">
+      <div class="card restaurant-card pointer">
+          <section class="restaurant-header">
               <div class="image-card">
-                  <img src="${API_ENDPOINT.IMAGE(restaurant.pictureId)}" alt="${restaurant.name}" />
+                  <img src="${API_ENDPOINT.IMAGE(restaurant.pictureId)}" alt="${restaurant.name || 'restaurant'}" />
                   <div class="label-city">
-                      <p>${restaurant.city}</p>
+                      <p>${restaurant.city || '-'}</p>
                   </div>
               </div>
           </section>
-          <section class="food-body">
-              <i class="fas fa-star fa-lg"></i> ${restaurant.rating}
-              <div class="food-title">
-                <a href="${API_ENDPOINT.DETAIL_ROUTE(restaurant.id)}">${restaurant.name}</a>
+          <section class="restaurant-body">
+              <i class="fas fa-star fa-lg"></i> ${restaurant.rating || '-'}
+              <div class="restaurant-title">
+                <a class="restaurant-a-title" href="${API_ENDPOINT.DETAIL_ROUTE(restaurant.id)}">${restaurant.name || '-'}</a>
               </div>
-              <p class="food-description">${restaurant.description}</p>
+              <p class="restaurant-description">${restaurant.description || '-'}</p>
           </section>
       </div>
     `;
