@@ -431,8 +431,8 @@ img {
     overflow: hidden;
 }
 
-.apps-more > img {
-    height: 200px;
+.apps-more img {
+    height: 240px;
     margin: auto;
 }
 
@@ -443,7 +443,7 @@ img {
 
 .download img {
     padding: 4px;
-    width: 120px;
+    height: 60px;
 }
 
 footer {

@@ -53,10 +53,14 @@
         </div>
       </div>
       <div class="apps-more">
-        <img src="./images/eating.jpeg" alt="Fudo Eat">
+        <picture>
+          <source media="(max-width: 600px)" class="lazyload" type="image/jpeg" srcset="./images/eating-small.jpeg">
+          <source media="(max-width: 1000px)" class="lazyload" type="image/jpeg" srcset="./images/eating-large.jpeg">
+          <img src="./images/eating.jpeg" class="lazyload" alt="Fudo Eat">
+        </picture>
         <div class="download">
-          <img src="./images/playstore.svg" alt="get on playstore">
-          <img src="./images/ios.svg" alt="get on ios">
+          <img class="lazyload" src="./images/playstore.svg" alt="get on playstore">
+          <img class="lazyload" src="./images/ios.svg" alt="get on ios">
         </div>
       </div>
     </footer>

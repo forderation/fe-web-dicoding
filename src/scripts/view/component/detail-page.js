@@ -17,7 +17,7 @@ export default class DetailPage extends HTMLElement {
   render () {
     const restaurant = this._restaurant;
     this.innerHTML = /* html */ `
-    <img class="image-detail" src="${API_ENDPOINT.IMAGE(restaurant.pictureId)}" alt="${restaurant.name}" />
+    <img class="image-detail lazyload" src="${API_ENDPOINT.IMAGE(restaurant.pictureId)}" alt="${restaurant.name}" />
     <div class="detail-page" id="detail-restaurant">
         <div class="heading-detail">
             <div class="head">
@@ -35,7 +35,7 @@ export default class DetailPage extends HTMLElement {
         <div class="tag-menu category-menu">
             ${this.parseTagItem(restaurant.categories)}
         </div>
-        <div class="description-resturant">
+        <div class="description-restaurant">
             <p tabindex="0">${restaurant.description}</p>
         </div>
         <section class="section-restaurant">
@@ -135,8 +135,8 @@ export default class DetailPage extends HTMLElement {
     const divMapping = reviews.map((review) => {
       return /* html */ `
       <div class="card" tabindex="0">
-        <p>${review.name} : ${review.review}</p>
-        <p>${review.date}</p>
+        <p class="reviewer-name">${review.name} : ${review.review}</p>
+        <p class="reviewer-content">${review.date}</p>
       </div>`;
     });
     return divMapping.join(' ');
