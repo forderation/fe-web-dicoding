@@ -1,6 +1,7 @@
 /* for async await transpile */
 import 'regenerator-runtime';
-
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import '../styles/main.css';
 import '../styles/responsive.css';
 
@@ -8,7 +9,6 @@ import '../styles/responsive.css';
 import '@fortawesome/fontawesome-free/js/fontawesome';
 import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
-import '@fortawesome/fontawesome-free/js/brands';
 
 // App shell and service
 import App from './view/app';
