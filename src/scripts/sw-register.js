@@ -1,8 +1,23 @@
-import runtime from 'serviceworker-webpack-plugin/lib/runtime';
+import { Workbox } from 'workbox-window';
 
-const swRegister = async () => {
+const swRegister = () => {
   if ('serviceWorker' in navigator) {
-    await runtime.register();
+    const wb = new Workbox('./sw.js');
+
+    wb.addEventListener('waiting', () => {
+      console.log(
+        "A new service worker has installed, but it can't activate until all tabs running the current version have fully unloaded."
+      );
+    });
+
+    wb.addEventListener('activated', (event) => {
+      if (!event.isUpdate) {
+        console.log('Service worker activated for the first time!');
+      }
+    });
+
+    // Register the service worker after event listeners have been added.
+    wb.register();
   }
 };
 

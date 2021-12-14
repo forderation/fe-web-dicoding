@@ -5,3 +5,9 @@
 node_modules/
 
 test.html
+
+public/
+
+.firebase
+
+e2e/outputs/

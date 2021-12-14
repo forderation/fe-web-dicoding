@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "fudo-7dc2d",
+    "staging": "fudo-7dc2d",
+    "remove fa local js": "fudo-7dc2d",
+    "chagenjs": "fudo-7dc2d",
+    "remove fa": "fudo-7dc2d",
+    "add attr image": "fudo-7dc2d",
+    "change to webp image": "fudo-7dc2d",
+    "hotfix image": "fudo-7dc2d",
+    "reduce size": "fudo-7dc2d",
+    "reindex image": "fudo-7dc2d",
+    "reindex": "fudo-7dc2d",
+    "new cache": "fudo-7dc2d"
+  },
+  "targets": {}
+}

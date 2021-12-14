@@ -5,7 +5,7 @@ Feature('Review Restaurants');
 Scenario('success review restaurant', async ({ I }) => {
   I.amOnPage('/');
 
-  I.seeElement('.restaurant-a-title');
+  I.waitForElement('.restaurant-a-title');
   const firstRestaurant = locate('.restaurant-a-title').first();
   I.click(firstRestaurant);
 
@@ -19,8 +19,6 @@ Scenario('success review restaurant', async ({ I }) => {
   I.fillField('#input-name', reviewerName);
   I.fillField('#input-review', reviewContent);
   I.click('#submit-review');
-  I.see('.toast-success');
-  I.wait(1);
 
   const reviewerNameSubmit = await I.grabTextFrom(locate('.reviewer-name').last());
   assert(reviewerNameSubmit, reviewerName);
@@ -31,7 +29,7 @@ Scenario('success review restaurant', async ({ I }) => {
 Scenario('fail review restaurant', async ({ I }) => {
   I.amOnPage('/');
 
-  I.seeElement('.restaurant-a-title');
+  I.waitForElement('.restaurant-a-title');
   const firstRestaurant = locate('.restaurant-a-title').first();
   I.click(firstRestaurant);
 
