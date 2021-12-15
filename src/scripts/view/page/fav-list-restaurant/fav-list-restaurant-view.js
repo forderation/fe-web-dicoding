@@ -16,9 +16,9 @@ export default class FavListRestaurantView {
     return /* html */ `
     <div class="hero">
       <picture>
-        <source media="(max-width: 600px)" type="image/jpeg" srcset="./images/hero-image_4-small.jpg" class="lazyload">
-        <source media="(max-width: 1000px)" type="image/jpeg" srcset="./images/hero-image_4-large.jpg" class="lazyload">
-        <img src="./images/hero-image_4.jpg" alt="Liked Foods" class="lazyload">
+        <source media="(max-width: 600px)" type="image/webp" srcset="./images/hero-image_4-small.webp" class="lazyload">
+        <source media="(max-width: 1000px)" type="image/webp" srcset="./images/hero-image_4-large.webp" class="lazyload">
+        <img data-src="./images/hero-image_4.webp" alt="Liked Foods" class="lazyload">
       </picture>
     </div>
     <div class="top-banner" id="fav-title">

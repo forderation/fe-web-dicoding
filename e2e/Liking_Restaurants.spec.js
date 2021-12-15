@@ -12,7 +12,7 @@ Scenario('liking and unlike restaurant', async ({ I }) => {
   I.see(emptyTitleFavRestaurant, '.fav_restaurants_empty');
   I.amOnPage('/');
 
-  I.seeElement('.restaurant-a-title');
+  I.waitForElement('.restaurant-a-title');
   const firstRestaurant = locate('.restaurant-a-title').first();
   const firstRestaurantName = await I.grabTextFrom(firstRestaurant);
   I.click(firstRestaurant);
@@ -21,7 +21,7 @@ Scenario('liking and unlike restaurant', async ({ I }) => {
   I.click('#likeButton');
 
   I.amOnPage('/#/like');
-  I.seeElement('.restaurant-card');
+  I.waitForElement('.restaurant-card');
   const likedRestaurantName = await I.grabTextFrom('.restaurant-a-title');
   assert.strictEqual(firstRestaurantName, likedRestaurantName);
 
@@ -35,7 +35,7 @@ Scenario('liking and unlike restaurant', async ({ I }) => {
 });
 
 Scenario('showing empty liked restaurants', ({ I }) => {
-  I.seeElement('#input-search');
+  I.waitForElement('#input-search');
   I.see(emptyTitleFavRestaurant, '.fav_restaurants_empty');
 });
 
@@ -43,7 +43,7 @@ Scenario('searching restaurants', async ({ I }) => {
   I.see(emptyTitleFavRestaurant, '.fav_restaurants_empty');
   I.amOnPage('/');
 
-  I.seeElement('.restaurant-a-title');
+  I.waitForElement('.restaurant-a-title');
   const names = [];
   for (let i = 1; i <= 3; i++) {
     I.click(locate('.restaurant-a-title').at(i));

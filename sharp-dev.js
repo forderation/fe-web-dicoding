@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const target = path.resolve(__dirname, 'src/public/images');
-const destination = path.resolve(__dirname, 'public/images');
+const destination = path.resolve(__dirname, 'src/public/images');
 
 if (!fs.existsSync(destination)) {
   fs.mkdirSync(destination);
@@ -14,10 +14,6 @@ fs.readdirSync(target)
     const imageFile = image.split('.');
     const fileName = imageFile.slice(0, -1);
     const ext = imageFile.pop();
-
-    if (image.includes('-large') || image.includes('-small') || ext === 'webp') {
-      return;
-    }
 
     if (ext === 'svg') {
       fs.copyFile(`${target}/${image}`, path.resolve(__dirname, `${destination}/${fileName}.${ext}`), (err) => {

@@ -17,7 +17,7 @@ export default class DetailPage extends HTMLElement {
   render () {
     const restaurant = this._restaurant;
     this.innerHTML = /* html */ `
-    <img class="image-detail lazyload" src="${API_ENDPOINT.IMAGE(restaurant.pictureId)}" alt="${restaurant.name}" />
+    <img class="image-detail lazyload" data-src="${API_ENDPOINT.IMAGE(restaurant.pictureId)}" alt="${restaurant.name}" />
     <div class="detail-page" id="detail-restaurant">
         <div class="heading-detail">
             <div class="head">
@@ -49,7 +49,7 @@ export default class DetailPage extends HTMLElement {
         </section>
         <section class="section-restaurant">
             <div class="heading">
-                <i class="fas fa-wine-glass-alt fa-2x"></i>
+                <i class="fas fa-wine-glass fa-2x"></i>
                 <p class="title" tabindex="0">Drinks</p>
             </div>
             <div class="tag-menu">

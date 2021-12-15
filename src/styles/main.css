@@ -46,7 +46,7 @@ form {
     font-size: 1rem;
     display: block;
     width: 100%;
-    padding: 10px;
+    padding: 14px;
 }
 
 .app-title {
@@ -133,7 +133,7 @@ form {
     color: #F7B700;
 }
 
-.fa-wine-glass-alt {
+.fa-wine-glass {
     color: #F7B700;
 }
 

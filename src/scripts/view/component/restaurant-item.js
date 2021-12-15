@@ -16,7 +16,7 @@ export default class RestaurantItem extends HTMLElement {
       <div class="card restaurant-card pointer">
           <section class="restaurant-header">
               <div class="image-card">
-                  <img src="${API_ENDPOINT.IMAGE(restaurant.pictureId)}" alt="${restaurant.name || 'restaurant'}" />
+                  <img class="lazyload" width="640" height="360" data-src="${API_ENDPOINT.IMAGE(restaurant.pictureId)}" alt="${restaurant.name || 'restaurant'}" />
                   <div class="label-city">
                       <p>${restaurant.city || '-'}</p>
                   </div>
