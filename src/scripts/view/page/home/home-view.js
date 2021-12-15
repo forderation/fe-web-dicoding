@@ -19,7 +19,7 @@ export default class HomeView {
         <picture>
           <source media="(max-width: 600px)" type="image/webp" srcset="./images/hero-image_2-small.webp" class="lazyload">
           <source media="(max-width: 1000px)" type="image/webp" srcset="./images/hero-image_2-large.webp" class="lazyload">
-          <img src="./images/hero-image_2.webp" alt="Explore Foods" class="lazyload">
+          <img data-src="./images/hero-image_2.webp" alt="Explore Foods" class="lazyload">
         </picture>
       </div>
       <div class="top-banner" id="banner-food">
@@ -35,7 +35,7 @@ export default class HomeView {
             <picture>
             <source media="(max-width: 600px)" type="image/webp" srcset="./images/img1-small.webp" class="lazyload">
               <source media="(max-width: 1000px)" type="image/webp" srcset="./images/img1-large.webp" class="lazyload">
-              <img src="./images/img1.webp" alt="Easy To Order" class="lazyload">
+              <img data-src="./images/img1.webp" alt="Easy To Order" class="lazyload">
             </picture>
             <figcaption tabindex="0">Easy To Order</figcaption>
             <p tabindex="0">You only need a few steps in ordering food.</p>
@@ -44,7 +44,7 @@ export default class HomeView {
             <picture>
               <source media="(max-width: 600px)" type="image/webp" srcset="./images/img2-small.webp" class="lazyload">
               <source media="(max-width: 1000px)" type="image/webp" srcset="./images/img2-large.webp" class="lazyload">
-              <img src="./images/img2.webp" alt="Fastest Delivery" class="lazyload">
+              <img data-src="./images/img2.webp" alt="Fastest Delivery" class="lazyload">
             </picture>
             <figcaption tabindex="0">Fastest Delivery</figcaption>
             <p tabindex="0">Delivery that is always on time even faster.</p>
@@ -53,7 +53,7 @@ export default class HomeView {
             <picture>
               <source media="(max-width: 600px)" type="image/webp" srcset="./images/img3-small.webp" class="lazyload">
               <source media="(max-width: 1000px)" type="image/webp" srcset="./images/img3-large.webp" class="lazyload">
-              <img src="./images/img3.webp" alt="Best Quality" class="lazyload">
+              <img data-src="./images/img3.webp" alt="Best Quality" class="lazyload">
             </picture>
             <figcaption tabindex="0">Best Quality</figcaption>
             <p tabindex="0">Not only fast for us quality is also number one.</p>

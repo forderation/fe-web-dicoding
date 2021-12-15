@@ -5,6 +5,18 @@ import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import '../styles/main.css';
 import '../styles/responsive.css';
 
+import { library, dom } from '@fortawesome/fontawesome-svg-core';
+import { faStar } from '@fortawesome/free-solid-svg-icons/faStar';
+import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons/faMapMarkerAlt';
+import { faUtensils } from '@fortawesome/free-solid-svg-icons/faUtensils';
+import { faWineGlass } from '@fortawesome/free-solid-svg-icons/faWineGlass';
+import { faSearch } from '@fortawesome/free-solid-svg-icons/faSearch';
+import { faComments } from '@fortawesome/free-regular-svg-icons/faComments';
+import { faPaperPlane } from '@fortawesome/free-regular-svg-icons/faPaperPlane';
+import { faHeart } from '@fortawesome/free-regular-svg-icons/faHeart';
+import { faCommentDots } from '@fortawesome/free-regular-svg-icons/faCommentDots';
+import * as faSolidHearth from '@fortawesome/free-solid-svg-icons/faHeart';
+
 // App shell and service
 import App from './view/app';
 import swRegister from './sw-register';
@@ -49,3 +61,6 @@ customElements.define('empty-favorite', EmptyFavorite);
 customElements.define('detail-page', DetailPage);
 customElements.define('error-internal', ErrorInternal);
 customElements.define('empty-search', EmptySearch);
+
+library.add(faStar, faMapMarkerAlt, faUtensils, faWineGlass, faComments, faSearch, faHeart, faPaperPlane, faCommentDots, faSolidHearth.faHeart);
+dom.watch();

@@ -18,7 +18,7 @@ export default class EmptySearch extends HTMLElement {
                   <picture>
                     <source media="(max-width: 600px)" type="image/webp" srcset="./images/empty-small.webp" class="lazyload">
                     <source media="(max-width: 1000px)" type="image/webp" srcset="./images/empty-large.webp" class="lazyload">
-                    <img src="./images/empty.webp" alt="Empty Search" class="lazyload">
+                    <img data-src="./images/empty.webp" alt="Empty Search" class="lazyload">
                   </picture>
                 <p>Oops looks like search for "${this._keyword}" is not found. You can try other keyword</p>
             </section>

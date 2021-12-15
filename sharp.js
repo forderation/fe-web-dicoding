@@ -28,13 +28,13 @@ fs.readdirSync(target)
 
     sharp(`${target}/${image}`)
       .webp({ quality: 60, reductionEffort: 6 })
+      .toFile(path.resolve(__dirname, `${destination}/${fileName}.webp`));
+
+    sharp(`${target}/${image}`)
+      .webp({ quality: 40, reductionEffort: 6 })
       .toFile(path.resolve(__dirname, `${destination}/${fileName}-large.webp`));
 
     sharp(`${target}/${image}`)
-      .webp({ quality: 60, reductionEffort: 6 })
+      .webp({ quality: 20, reductionEffort: 6 })
       .toFile(path.resolve(__dirname, `${destination}/${fileName}-small.webp`));
-
-    sharp(`${target}/${image}`)
-      .webp({ quality: 60, reductionEffort: 6 })
-      .toFile(path.resolve(__dirname, `${destination}/${fileName}.webp`));
   });

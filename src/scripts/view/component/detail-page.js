@@ -17,7 +17,7 @@ export default class DetailPage extends HTMLElement {
   render () {
     const restaurant = this._restaurant;
     this.innerHTML = /* html */ `
-    <img class="image-detail lazyload" src="${API_ENDPOINT.IMAGE(restaurant.pictureId)}" alt="${restaurant.name}" />
+    <img class="image-detail lazyload" data-src="${API_ENDPOINT.IMAGE(restaurant.pictureId)}" alt="${restaurant.name}" />
     <div class="detail-page" id="detail-restaurant">
         <div class="heading-detail">
             <div class="head">

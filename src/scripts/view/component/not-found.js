@@ -10,7 +10,7 @@ export default class NotFound extends HTMLElement {
                 <picture>
                   <source media="(max-width: 600px)" type="image/webp" srcset="./images/404-small.webp" class="lazyload">
                   <source media="(max-width: 1000px)" type="image/webp" srcset="./images/404-large.webp" class="lazyload">
-                  <img src="./images/404.webp" alt="Not Found Page" class="lazyload">
+                  <img data-src="./images/404.webp" alt="Not Found Page" class="lazyload">
                 </picture>
                 <figcaption>Page Not Found</figcaption>
                 <p>Oops looks like you did not found your page.</p>

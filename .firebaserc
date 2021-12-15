@@ -11,7 +11,11 @@
     "reduce size": "fudo-7dc2d",
     "reindex image": "fudo-7dc2d",
     "reindex": "fudo-7dc2d",
-    "new cache": "fudo-7dc2d"
+    "new cache": "fudo-7dc2d",
+    "lazyload fix": "fudo-7dc2d",
+    "new bundle": "fudo-7dc2d",
+    "rescript fa": "fudo-7dc2d",
+    "change padding": "fudo-7dc2d"
   },
   "targets": {}
 }

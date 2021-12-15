@@ -10,7 +10,7 @@ export default class EmptyFavorite extends HTMLElement {
                   <picture>
                     <source media="(max-width: 600px)" type="image/webp" srcset="./images/empty-small.webp" class="lazyload">
                     <source media="(max-width: 1000px)" type="image/webp" srcset="./images/empty-large.webp" class="lazyload">
-                    <img src="./images/empty.webp" alt="Empty Favorite Restaurant" class="lazyload">
+                    <img data-src="./images/empty.webp" alt="Empty Favorite Restaurant" class="lazyload">
                   </picture>
                   <figcaption class="fav_restaurants_empty">Favorite Restaurants Empty</figcaption>
                   <p>Oops looks like you did not have favorite restaurants.</p>
